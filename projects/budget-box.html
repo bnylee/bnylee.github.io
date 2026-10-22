@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gamified Budget Box | Benny Lee</title>
+  <meta name="description" content="The Gamified Budget Box is a laser-cut plywood savings box with five servo-driven doors, a keypad, and an LCD, built by a team of four.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gamified Budget Box | Benny Lee">
+  <meta property="og:description" content="The Gamified Budget Box is a laser-cut plywood savings box with five servo-driven doors, a keypad, and an LCD, built by a team of four.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-budget side-hw">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">Gamified Budget Box</h1>
+        <p class="cs-lede">A plywood savings box that tracks your weekly spending, with five servo-driven doors, a keypad, and an LCD. I led the mechanical design and fabrication for our team of 4.</p>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Mechanical design and fabrication lead</dd></div>
+          <div><dt>Team</dt><dd>4 people</dd></div>
+          <div><dt>Dates</dt><dd>Jan–Apr 2026</dd></div>
+          <div><dt>Tools</dt><dd>AutoCAD, Adobe Illustrator, laser cutter, servos, Raspberry Pi Pico</dd></div>
+        </dl>
+        <a class="cad-btn" href="#gallery" data-cad-open="cad-budget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V3l18 18z"/><path d="M7.5 16.5v-5l5 5z"/></svg> AutoCAD drawings <span>2</span></a>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-budget side-hw">
+      <figure class="panel-media">
+        <div class="stage stage-budget">
+                <div class="dimbox" data-w="18.5 in">
+                  <img src="../assets/budget-box/front.webp" width="1020" height="544" alt="Front of the finished Gamified Budget Box: black-painted plywood with an LCD reading Left: $0.00, five buttons along the top, and five green doors on strings">
+                </div>
+              </div>
+        <figcaption>The finished Gamified Budget Box from the front, Jan–Apr 2026.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>I fabricated the box from plywood. It measures 18.5 × 8 × 12 in and cost <strong>$22.50</strong> in materials. It has five magnetic doors that servos open and close, plus a keypad and an LCD. Our team went through three prototypes and made the box more durable along the way by reinforcing parts and fixing the servo calibration. The final build is painted black with green doors.</p>
+          <p>The idea was to turn a weekly budget into a game. You type what you spend into the keypad, the LCD shows a progress bar, and you earn points and a title like “Budget Boss.”</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>A lot of college students overspend. Impulse purchases, stress, and peer pressure all play a part, and so does not seeing the long-term cost. The usual fixes are strict budgets, financial literacy courses, and paying in cash. All of them depend on self-control, and none of them hold anyone accountable.</p>
+          <p>We wanted a device that made spending visible and kept people engaged without shaming them or touching their bank accounts. Our research on gamification drew on self-determination theory, which centers on autonomy, competence, and relatedness. It pointed us toward streaks, progress bars, and personal improvement instead of harsh competition.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <p>Most payments are digital now, so a box for cash would only see part of your spending. We thought about building an app, but none of us had much web development experience. So we went with an ATM-style box, because people already know how to use one. You enter each purchase on the keypad.</p>
+          <p>At about 18.5 × 8 × 12 in, the box fits standard US bills and leaves enough leverage for the pulley system. There are five compartments, one for each business day. Yarn ties each door to a servo-driven pulley, so pressing a button opens or closes it.</p>
+          <p>I designed the box’s dovetail joints in AutoCAD to keep it rigid. The electronics are a Raspberry Pi Pico, servos, buttons, an LCD, and a keypad. You can see the AutoCAD panel layouts in the gallery below.</p>
+          <div class="cs-gallery">
+            <figure><a href="../assets/budget-box/concept-pet.webp"><img src="../assets/budget-box/concept-pet.webp" width="1400" height="1499" loading="lazy" alt="Hand-drawn concept of a Budget Pet that levels up when you stay under your weekly spending limit and loses points for bad habits like an overdraft"></a><figcaption>An idea from our first milestone: a pet that grows when you stick to your budget</figcaption></figure>
+            <figure><a href="../assets/budget-box/wiring-diagram-m2.webp"><img src="../assets/budget-box/wiring-diagram-m2.webp" width="631" height="371" loading="lazy" alt="Wiring diagram of a Raspberry Pi Pico on a breadboard connected to an LCD and one servo"></a><figcaption>Wiring diagram for prototype 1: the Pico, the LCD and one servo</figcaption></figure>
+            <figure><a href="../assets/budget-box/wiring-diagram-m3.webp"><img src="../assets/budget-box/wiring-diagram-m3.webp" width="1201" height="901" loading="lazy" alt="Wiring diagram of two Raspberry Pi Picos on breadboards connected to an LCD, a 16-key keypad, five buttons and five servos"></a><figcaption>Wiring diagram for prototype 2, with the keypad, a button and a servo for each door</figcaption></figure>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Build</h2>
+        <div>
+          <p>The box is 1/8 in plywood, cut from ten sheets, five at 12 × 12 in and five at 12 × 24 in. I prepared the cut files in Adobe Illustrator and put the box together with wood glue and hot glue.</p>
+          <ul>
+            <li>Laser cut the panels and doors, along with the openings and mounts for the buttons, servos, keypad, and LCD.</li>
+            <li>Stacked two boxes, with the electronics and servos in the top one and a divider for each day in the bottom bay.</li>
+            <li>Fitted 5 servo-driven doors, each held closed by magnets.</li>
+            <li>Painted the exterior black and the five doors green.</li>
+          </ul>
+          <div class="cs-gallery">
+            <figure><a href="../assets/budget-box/glue-up.webp"><img src="../assets/budget-box/glue-up.webp" width="1400" height="1072" loading="lazy" alt="The unpainted laser-cut plywood box on a workbench, with five open compartments along the bottom"></a><figcaption>Prototype 2 glued up. Wood glue alone held the dovetail joints together.</figcaption></figure>
+            <figure><a href="../assets/budget-box/breadboards.webp"><img src="../assets/budget-box/breadboards.webp" width="1000" height="1333" loading="lazy" alt="Two breadboards with Raspberry Pi Picos, a battery pack, and a tangle of jumper wires and servo leads"></a><figcaption>The electronics on breadboards before they went into the box</figcaption></figure>
+            <figure><a href="../assets/budget-box/inside-wiring.webp"><img src="../assets/budget-box/inside-wiring.webp" width="1400" height="935" loading="lazy" alt="The painted box opened from the back, showing the servos and the wiring inside"></a><figcaption>The finished box opened up, with the servos and wiring inside</figcaption></figure>
+            <figure><a href="../assets/budget-box/top-keypad.webp"><img src="../assets/budget-box/top-keypad.webp" width="1400" height="703" loading="lazy" alt="Top of the painted box: a keypad and five colored buttons on black plywood"></a><figcaption>The finished top, with a button for each door and the keypad</figcaption></figure>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Testing and iteration</h2>
+        <div>
+          <ul>
+            <li><strong>Prototype 1, cardboard.</strong> Servos pulled strings to raise and lower the doors, but amounts had to be typed into a command window. Testers were confused by all the letter keys and asked for a physical keypad.</li>
+            <li><strong>Prototype 2, laser-cut plywood.</strong> We added the keypad, a button for each door, magnets, and the LCD. This time testers pointed out that the keypad wasn’t anchored well, the yarn was likely to fray, and the doors didn’t always rise or drop all the way. They also didn’t know how to use the box.</li>
+            <li><strong>Final.</strong> We glued and reinforced the keypad and other high-use parts, fixed the servo calibration, added an instruction poster, and painted the exterior.</li>
+          </ul>
+          <figure class="cs-fig"><a href="../assets/budget-box/prototype1-wiring.webp"><img src="../assets/budget-box/prototype1-wiring.webp" width="1400" height="977" loading="lazy" alt="Inside the cardboard prototype: an LCD on the back wall, and a breadboard with a Pico and a servo wired with jumper wires"></a><figcaption>Inside prototype 1, the cardboard version</figcaption></figure>
+          <p>Early testers also asked for a way to put unused money back into the box, and warned that the yarn would fray over time. Swapping in a stronger line would be the next step.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <ul>
+            <li>Box size: 18.5 × 8 × 12 in</li>
+            <li>Material cost: $22.50</li>
+            <li>Doors: 5, servo-driven, magnetic</li>
+            <li>Prototypes: 3</li>
+            <li>At the expo, a board listing each keypad command let visitors follow along, so we didn’t have to explain everything from scratch.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change</h2>
+        <div>
+          <p>If I did it again, I’d build it as an app. I’m interested in web and app development, and I’m now building one, <a href="optimized-learning.html">Optimized Learning</a>, an AI study app.</p>
+          <p>For the next expo, we’d make a bigger, more colorful poster with clearer visuals and add more interactive elements so the box stands out sooner.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="gallery">Gallery</h2>
+        <div>
+          <div class="cs-gallery">
+            <figure><img src="../assets/budget-box/sketch.webp" width="1400" height="844" loading="lazy" alt="Hand-drawn sketch of the box with an LCD, a leaderboard, and a progress bar for money spent"><figcaption>The first sketch, with an LCD, a leaderboard, and a progress bar for spending</figcaption></figure>
+            <figure><img src="../assets/budget-box/prototype-m2.webp" width="828" height="710" loading="lazy" alt="Cardboard prototype of the box with an LCD and servo-pulled doors above five open compartments"><figcaption>Prototype 1 in cardboard, with string-pulled doors</figcaption></figure>
+            <figure><img src="../assets/budget-box/prototype-m3.webp" width="718" height="666" loading="lazy" alt="Prototype 2: the unpainted laser-cut plywood box with a keypad and buttons on top, an LCD, and five string-pulled doors"><figcaption>Prototype 2 in laser-cut plywood, before painting</figcaption></figure>
+            <figure><img src="../assets/budget-box/cad-panels.webp" width="1400" height="804" loading="lazy" alt="AutoCAD layout of the laser-cut panels with interlocking edges, labeled left, right, top, back, and bottom"><figcaption>Laser-cut panel layout in AutoCAD</figcaption></figure>
+            <figure><img src="../assets/budget-box/cad-dimensions.webp" width="1400" height="1011" loading="lazy" alt="AutoCAD drawing of the panel layout with overall dimensions"><figcaption>Panel layout with dimensions</figcaption></figure>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="reaction-game.html"><span>Previous project</span><strong>Reaction-Time Game</strong></a>
+      <a href="enable-hand.html"><span>Next project</span><strong>e-NABLE Prosthetic Hand</strong></a>
+    </nav>
+
+    <dialog class="cad" id="cad-budget" aria-labelledby="cad-budget-title">
+      <div class="cad-head">
+        <div><h2 id="cad-budget-title">Gamified Budget Box: AutoCAD drawings</h2><p>Laser-cut panel layouts</p></div>
+        <button class="cad-x" type="button" data-cad-close>Close</button>
+      </div>
+      <div class="cad-stage">
+        <figure class="cad-slide is-active"><img src="../assets/budget-box/cad-panels.webp" width="1400" height="804" loading="lazy" alt="AutoCAD layout of the laser-cut panels with interlocking edges, labeled left, right, top, back, and bottom"><figcaption>Panel layout for the laser cutter: left, right, top, back, and bottom</figcaption></figure>
+        <figure class="cad-slide"><img src="../assets/budget-box/cad-dimensions.webp" width="1400" height="1011" loading="lazy" alt="AutoCAD drawing of the panel layout with overall dimensions"><figcaption>Panel layout with overall dimensions</figcaption></figure>
+      </div>
+      <div class="cad-nav"><button type="button" data-cad-prev>Previous</button><span class="cad-count">1 / 2</span><button type="button" data-cad-next>Next</button></div>
+    </dialog>
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

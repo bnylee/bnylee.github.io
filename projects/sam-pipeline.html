@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAM Pipeline | Benny Lee</title>
+  <meta name="description" content="A Python pipeline I’m building as a PEAK Summit Fellow at Northeastern. It builds balanced Social Accounting Matrices for economic-statecraft research.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SAM Pipeline | Benny Lee">
+  <meta property="og:description" content="A Python pipeline I’m building as a PEAK Summit Fellow at Northeastern. It builds balanced Social Accounting Matrices for economic-statecraft research.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-sam side-sw">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">SAM Pipeline</h1>
+        <p class="cs-lede">An automated Python pipeline that builds Social Accounting Matrices. Each one is a balanced table that records every payment in a country’s economy for a year. This is my current research in Northeastern’s Financial Stress Lab, supported by a PEAK Summit Fellowship.</p>
+        <div class="fellow">
+          <p class="fellow-head">PEAK Summit Fellowship &middot; Northeastern Undergraduate Research and Fellowships</p>
+          <p class="fellow-title">&ldquo;A Reproducible Pipeline for Multi-Country Social Accounting Matrix Construction&rdquo;</p>
+          <p class="fellow-meta">Mentor: Prof. Mikhail Oet &middot; Business and Social Sciences</p>
+        </div>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Undergraduate researcher, PEAK Summit Fellow</dd></div>
+          <div><dt>Advisors</dt><dd>Prof. Mikhail Oet (PI), Prof. Paul Chiou</dd></div>
+          <div><dt>Dates</dt><dd>Phase 2, Jul 2026&ndash;present</dd></div>
+          <div><dt>Stack</dt><dd>Python, scipy, cvxpy, pandas, pytest</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-sam side-sw">
+      <figure class="panel-media">
+        <div class="stage stage-world">
+                <div class="world" role="img" aria-label="Map of Central Asia and its neighbors Iran and Afghanistan: Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan, Turkmenistan, Afghanistan and Iran. The other three economies built so far sit just outside the frame: the United States to the west, Mongolia to the east and Sri Lanka to the south. Lines connect every pair to show trade, and a pulse spreads from Kazakhstan along its lines to every partner, the way a shock would.">
+                  <img src="../assets/sam/sam-world.svg" width="960" height="700" alt="">
+                  <svg class="world-net" viewBox="0 0 960 700" aria-hidden="true">
+                    <g class="links"><path d="M510.3 152.8Q586.6 197.7 622.7 278.6"/><path d="M510.3 152.8Q460.6 204.1 449.9 274.7"/><path d="M510.3 152.8Q566.3 232.9 565.5 330.6"/><path d="M510.3 152.8Q418.2 216.1 380 321"/><path d="M510.3 152.8Q455.9 284.6 488.1 423.6"/><path d="M510.3 152.8Q353.8 268 293.2 452.7"/><path d="M510.3 152.8Q253.2 160 48 315.2"/><path d="M510.3 152.8Q714.8 99.9 912 175.5"/><path d="M510.3 152.8Q699 370.9 726.1 658"/><path d="M622.7 278.6Q536.9 249 449.9 274.7"/><path d="M622.7 278.6Q585.8 295.4 565.5 330.6"/><path d="M622.7 278.6Q494.6 261 380 321"/><path d="M622.7 278.6Q532.2 329.6 488.1 423.6"/><path d="M622.7 278.6Q430.1 312.9 293.2 452.7"/><path d="M622.7 278.6Q329.5 204.9 48 315.2"/><path d="M622.7 278.6Q750.9 180.8 912 175.5"/><path d="M622.7 278.6Q735.1 451.8 726.1 658"/><path d="M449.9 274.7Q516.6 284.2 565.5 330.6"/><path d="M449.9 274.7Q407.5 286.7 380 321"/><path d="M449.9 274.7Q492.8 343 488.1 423.6"/><path d="M449.9 274.7Q343.1 338.6 293.2 452.7"/><path d="M449.9 274.7Q242.5 230.6 48 315.2"/><path d="M449.9 274.7Q665.1 151.2 912 175.5"/><path d="M449.9 274.7Q649.3 422.2 726.1 658"/><path d="M565.5 330.6Q474.3 296.1 380 321"/><path d="M565.5 330.6Q511.9 364.7 488.1 423.6"/><path d="M565.5 330.6Q409.8 348.1 293.2 452.7"/><path d="M565.5 330.6Q309.2 240.1 48 315.2"/><path d="M565.5 330.6Q713.9 197.6 912 175.5"/><path d="M565.5 330.6Q698.2 468.6 726.1 658"/><path d="M380 321Q450.5 355 488.1 423.6"/><path d="M380 321Q315.5 373 293.2 452.7"/><path d="M380 321Q214.9 265 48 315.2"/><path d="M380 321Q622.7 163.1 912 175.5"/><path d="M380 321Q607 434.1 726.1 658"/><path d="M488.1 423.6Q386 407 293.2 452.7"/><path d="M488.1 423.6Q285.4 299 48 315.2"/><path d="M488.1 423.6Q660.4 231.7 912 175.5"/><path d="M488.1 423.6Q644.6 502.7 726.1 658"/><path d="M293.2 452.7Q192.6 344.7 48 315.2"/><path d="M293.2 452.7Q558.2 215.1 912 175.5"/><path d="M293.2 452.7Q542.5 486.1 726.1 658"/><path d="M48 315.2Q457.6 107.1 912 175.5"/><path d="M48 315.2Q441.9 378.1 726.1 658"/><path d="M912 175.5Q741.8 387 726.1 658"/></g>
+                    <g class="hits"><path class="hit" pathLength="1" style="--t:0.43s" d="M510.3 152.8Q586.6 197.7 622.7 278.6"/><path class="hit" pathLength="1" style="--t:0.37s" d="M510.3 152.8Q460.6 204.1 449.9 274.7"/><path class="hit" pathLength="1" style="--t:0.45s" d="M510.3 152.8Q566.3 232.9 565.5 330.6"/><path class="hit" pathLength="1" style="--t:0.50s" d="M510.3 152.8Q418.2 216.1 380 321"/><path class="hit" pathLength="1" style="--t:0.60s" d="M510.3 152.8Q455.9 284.6 488.1 423.6"/><path class="hit" pathLength="1" style="--t:0.76s" d="M510.3 152.8Q353.8 268 293.2 452.7"/><path class="hit" pathLength="1" style="--t:0.95s" d="M510.3 152.8Q253.2 160 48 315.2"/><path class="hit" pathLength="1" style="--t:0.81s" d="M510.3 152.8Q714.8 99.9 912 175.5"/><path class="hit" pathLength="1" style="--t:1.05s" d="M510.3 152.8Q699 370.9 726.1 658"/></g>
+                    <circle class="burst" cx="510.3" cy="152.8" r="18"/>
+                    <g class="rings"><circle class="ring" style="--t:1.53s" cx="622.7" cy="278.6" r="16"/><circle class="ring" style="--t:1.47s" cx="449.9" cy="274.7" r="16"/><circle class="ring" style="--t:1.55s" cx="565.5" cy="330.6" r="16"/><circle class="ring" style="--t:1.60s" cx="380" cy="321" r="16"/><circle class="ring" style="--t:1.70s" cx="488.1" cy="423.6" r="16"/><circle class="ring" style="--t:1.86s" cx="293.2" cy="452.7" r="16"/><circle class="ring" style="--t:2.05s" cx="48" cy="315.2" r="16"/><circle class="ring" style="--t:1.91s" cx="912" cy="175.5" r="16"/><circle class="ring" style="--t:2.15s" cx="726.1" cy="658" r="16"/></g>
+                    <g class="nodes"><circle cx="510.3" cy="152.8" r="9" class="origin"/><circle cx="622.7" cy="278.6" r="6.5"/><circle cx="449.9" cy="274.7" r="6.5"/><circle cx="565.5" cy="330.6" r="6.5"/><circle cx="380" cy="321" r="6.5"/><circle cx="488.1" cy="423.6" r="6.5"/><circle cx="293.2" cy="452.7" r="6.5"/><circle cx="48" cy="315.2" r="6.5"/><circle cx="912" cy="175.5" r="6.5"/><circle cx="726.1" cy="658" r="6.5"/></g>
+                  </svg>
+                  <span class="wl wl-above" style="--x:53.16%;--y:21.83%">Kazakhstan</span><span class="wl wl-right" style="--x:64.86%;--y:39.80%">Kyrgyzstan</span><span class="wl wl-above" style="--x:46.86%;--y:39.24%">Uzbekistan</span><span class="wl wl-right" style="--x:58.91%;--y:47.23%">Tajikistan</span><span class="wl wl-left" style="--x:39.58%;--y:45.86%">Turkmenistan</span><span class="wl wl-below" style="--x:50.84%;--y:60.51%">Afghanistan</span><span class="wl wl-left" style="--x:30.54%;--y:64.67%">Iran</span><span class="wl wl-off-l" style="--x:5.00%;--y:45.03%">United States</span><span class="wl wl-off-r" style="--x:95.00%;--y:25.07%">Mongolia</span><span class="wl wl-off-b" style="--x:75.64%;--y:94.00%">Sri Lanka</span>
+                </div>
+                <p class="sam-key">Each line is trade between two of the 10 economies built so far. The pulse shows what linking the tables is for: following a shock in one country, here Kazakhstan, out to its trading partners.</p>
+              </div>
+              <figcaption>The goal is to link the country tables into one model. The map centers on Central Asia and its neighbors Iran and Afghanistan, with Mongolia, Sri Lanka and the United States just off the edge.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>A <strong>Social Accounting Matrix</strong> (SAM) is a square table of every payment made in a country&rsquo;s economy in one year. Each account gets one row for the money it receives and one column for the money it spends. An account can be an industry, households, the government or the rest of the world. Every row total has to equal its column total, since every dollar received is a dollar spent or saved.</p>
+          <p>My pipeline builds these tables reproducibly from global input-output databases, which record what each industry buys from every other. Then it balances each table, checks it, and records where every number came from.</p>
+          <ul>
+            <li><strong>18 balanced SAMs</strong> so far. 17 cover <strong>10 countries</strong> (the United States, Kazakhstan, Sri Lanka, Mongolia, Kyrgyzstan, Uzbekistan, Tajikistan, Turkmenistan, Afghanistan and Iran), and one covers Nigeria, which is shelved</li>
+            <li><strong>140 accounts</strong> in every table, including 59 industries chosen by measurement</li>
+            <li>Every account balances to better than <strong>one part in ten million</strong></li>
+            <li>Comparing two sources caught a <strong>$31.2bn error</strong> in a global database that had passed every check on its totals</li>
+          </ul>
+          <figure class="cs-fig t-sam">
+            <div class="stage stage-sam">
+                <div class="sam-map">
+                  <img src="../assets/sam/usa-2019-sam.webp" width="1120" height="1120" alt="The United States' 2019 Social Accounting Matrix as a grid of 140 by 140 accounts. Bright squares are large payments: a dense block where industries buy from each other, a diagonal line where each industry sells its own product, a row of value added (wages and profit combined in this build), and columns of final spending.">
+                  <span class="sam-pin" style="--x:21%;--y:63%" aria-hidden="true">1</span>
+                  <span class="sam-pin" style="--x:63%;--y:21%" aria-hidden="true">2</span>
+                  <span class="sam-pin" style="--x:21%;--y:88%" aria-hidden="true">3</span>
+                  <span class="sam-pin" style="--x:93%;--y:63%" aria-hidden="true">4</span>
+                </div>
+                <ol class="sam-legend">
+                  <li>Industries buy parts and services from each other</li>
+                  <li>Each industry sells its own product</li>
+                  <li>Industries pay out value added (wages and profit)</li>
+                  <li>Households, government and exports buy products</li>
+                </ol>
+                <p class="sam-key">Each square is money the row receives from the column, and brighter means bigger. Every row adds up to its column.</p>
+              </div>
+            <figcaption>The United States in 2019, one of the 18 tables built so far, with 140 accounts and 2,393 payments. Data: OECD Inter-Country Input-Output tables, 2025 edition.</figcaption></figure>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>The SAMs are there to calibrate an <strong>agent-based model for economic-statecraft research</strong>. That model, which is still to be built, will simulate how sanctions, export bans or a supply shock spread through an economy. It needs each economy&rsquo;s real structure, such as how much of a country&rsquo;s steel goes to construction, how much household income comes from wages, and how much an industry depends on imports. A SAM records exactly that in a form a model can read.</p>
+          <figure class="cs-fig"><a href="../assets/sam/toy-sam.webp"><img src="../assets/sam/toy-sam.webp" width="1600" height="1228" loading="lazy" alt="A small example SAM with two industries, two products, labour, capital, households, savings and the rest of the world. Each row lists what an account receives and each column what it pays, and the row and column totals match."></a><figcaption>A SAM in miniature, using the toy economy from the pipeline&rsquo;s own test file. Read each cell as &ldquo;the row receives this much from the column&rdquo;. For example, households receive 70 from labour. Every row total equals its column total.</figcaption></figure>
+          <p>Building a good one is hard for four reasons.</p>
+          <ul>
+            <li><strong>No single dataset is enough.</strong> One source has the trade detail and another splits income into wages and profit. The target region, Central Asia and the Indo-Pacific, is thinly covered by most of them.</li>
+            <li><strong>Sources disagree, so the raw table never balances.</strong> Forcing it to balance can quietly overwrite good data with guesses.</li>
+            <li><strong>The model needs every country at full detail.</strong> Lumping countries into composite regions like &ldquo;rest of the world&rdquo; won&rsquo;t do.</li>
+            <li><strong>Every number has to be traceable</strong>, so that an estimate is never mistaken for a measurement.</li>
+          </ul>
+          <p>This is the second phase of my research. The first, my <a href="gtap-trade-stress.html">GTAP trade stress model</a>, exposed three limits in global trade tables, and I designed this pipeline around them.</p>
+          <details class="cs-more">
+            <summary>More detail: how phase 1 shaped this project</summary>
+            <p>The GTAP model pushed a supply cut through global trade tables. Checking its results exposed three limits. The tables lacked the income side of the economy, so the math needed a small correction term, and that term ended up deciding the results. Two countries also showed zero risk because they mine almost no metal ore, and the model only cut a country&rsquo;s own mining, even though both import all the ore they use.</p>
+            <figure class="cs-fig"><a href="../assets/sam/project-arc.webp"><img src="../assets/sam/project-arc.webp" width="1560" height="1144" loading="lazy" alt="Diagram in three boxes. Phase 1, the trade stress model of January to June 2026, used GTAP 10 and OECD ICIO data to model the 2010 Japan rare-earths episode. Checking its results exposed three limits: output approximated from intermediate flows only; a Leontief inverse that needed a regularization term, which ended up deciding the results; and zero stress for Germany and the UK, because they mine almost no metal ore and the model only cut a country&rsquo;s own mining, though both import all the ore they use. These were carried into phase 2, the SAM pipeline: full tables with value added and final demand, cross-entropy balancing, GDP-identity and structural-plausibility gates, and cell-level provenance."></a><figcaption>How phase 1 shaped phase 2. Each limit the trade stress model exposed became a requirement for the SAM pipeline.</figcaption></figure>
+          </details>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <p>Each build combines three kinds of input. A <strong>backbone</strong> database records who buys what from whom. <strong>Translator</strong> files map each backbone&rsquo;s sectors onto one shared list. <strong>Referees</strong> are independent GDP figures that the finished table is checked against but never built from.</p>
+          <figure class="cs-fig"><a href="../assets/sam/data-flow.webp"><img src="../assets/sam/data-flow.webp" width="1600" height="900" loading="lazy" alt="Flow diagram: GLORIA, ADB and OECD ICIO data and the concordance files feed five pipeline steps (read and map, assemble the raw SAM, balance, validate, write only if no error), with World Bank and IMF GDP as independent benchmarks, producing balanced country SAMs."></a><figcaption>How the data moves through the pipeline: read and map, assemble, balance, validate, and write only if nothing fails.</figcaption></figure>
+          <ul>
+            <li><strong>Three backbones.</strong> GLORIA covers 164 regions and is the only one of the three that splits income into labour and capital. The Asian Development Bank&rsquo;s tables cover countries the OECD folds into &ldquo;rest of world&rdquo;. The OECD&rsquo;s ICIO is the cross-check. Each build uses one of them, and where another source covers the same country, it checks the build.</li>
+            <li><strong>A balancer that moves guesses before measurements.</strong> No maintained Python version of cross-entropy balancing (Robinson, Cattaneo and El-Said, 2001) existed, so I implemented it from the published formulation. Each cell is weighted by how trustworthy its source is, and an imputed cell absorbs about a hundred times the adjustment of an observed one.</li>
+            <li><strong>Solving the small problem instead of the big one.</strong> The direct formulation solves for every cell, a few thousand per country, and it didn&rsquo;t finish balancing one country in ten minutes. Its dual, an equivalent form of the same problem, solves for one number per account. That&rsquo;s 140 numbers, and it balances a country in under a second. The two answers agree to 2&times;10<sup>&minus;11</sup>.</li>
+            <li><strong>Provenance on every cell.</strong> Each number records its source and how it was derived, on a six-level scale from observed to scenario. A build that contains an unflagged value fails validation.</li>
+          </ul>
+          <details class="cs-more">
+            <summary>More detail: source coverage, the 59 sectors, and the balancer&rsquo;s rules</summary>
+            <figure class="cs-fig"><a href="../assets/sam/coverage.webp"><img src="../assets/sam/coverage.webp" width="1600" height="1060" loading="lazy" alt="Grid of the ten countries against four sources (GLORIA, ADB, OECD ICIO, GTAP), showing where a SAM was built and where a source can cross-check it. Sri Lanka is marked unusable in GLORIA, and Turkmenistan has no second source."></a><figcaption>Which source covers which country. Most countries have one usable backbone, and Turkmenistan has nothing that can cross-check it.</figcaption></figure>
+            <p><strong>59 sectors, chosen by measurement.</strong> A group of related sectors is split apart only if one of them is at least 1% of a country&rsquo;s output somewhere, and every member is measured reliably, at 2% reconciliation error or less. The extra detail goes where economic statecraft bites. Crude oil is split from natural gas (crude alone is 8.1% of Kazakhstan&rsquo;s output), pipelines are their own transport mode, and banking is separate from insurance. Copper ore gets its own sector too, after clearing the gate on Mongolian data at 13.38% of output. Uranium didn&rsquo;t, at 0.11% of Kazakh output, so it stays grouped, and a test makes sure it does.</p>
+            <figure class="cs-fig"><a href="../assets/sam/metal-ore-rule.webp"><img src="../assets/sam/metal-ore-rule.webp" width="1600" height="779" loading="lazy" alt="Bar chart of the largest single metal ore in each country as a share of gross output, on a log scale. Only Mongolian copper ore, at 13.38%, clears the 1% line."></a><figcaption>The 1% rule for metal ores. Only Mongolian copper clears it, so copper became its own sector and uranium did not.<span class="credit">Computed from GLORIA MRIO release 060 (ielab.info/resources/gloria), CC BY-NC-SA 4.0. Shared under the same licence.</span></figcaption></figure>
+            <p><strong>The balancer&rsquo;s rules.</strong> A cell that starts at zero stays zero unless it is deliberately opened, and flows that the accounting structure rules out can never be opened. The six provenance levels run from observed through allocated and imputed to scenario. A test checks that the direct and dual answers match.</p>
+          </details>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="math">The math</h2>
+        <div>
+          <p>Five formulas do the work in this pipeline. For each one, here&rsquo;s what it says in plain words and why I use it. The last, the Leontief matrix, is also what my <a href="gtap-trade-stress.html#math">trade-stress project</a> ran on.</p>
+          <div class="cs-math">
+            <div class="cs-eq">
+              <h3>1. The accounting identity</h3>
+              <div class="cs-eq-math"><math alttext="for every account i, the sum over j of T i j equals the sum over j of T j i" displaystyle="true"><mrow><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>T</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub></mrow></math><math alttext="the absolute gap between r i and c i, over the larger of the two, is at most 10 to the minus 7" displaystyle="true"><mrow><mfrac><mrow><mo fence="true" stretchy="false" rspace="0">|</mo><msub><mi>r</mi><mi>i</mi></msub><mo>−</mo><msub><mi>c</mi><mi>i</mi></msub><mo fence="true" stretchy="false" lspace="0">|</mo></mrow><mrow><mi>max</mi><mrow><mo>(</mo><msub><mi>r</mi><mi>i</mi></msub><mo>,</mo><msub><mi>c</mi><mi>i</mi></msub><mo>)</mo></mrow></mrow></mfrac><mo>≤</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow></math></div>
+              <p class="cs-eq-where">T<sub>ij</sub> is what account j pays account i, so row i is what account i receives and column i is what it spends. r<sub>i</sub> and c<sub>i</sub> are those two totals.</p>
+              <p><strong>In plain words.</strong> Every account&rsquo;s income has to equal its spending, like a budget that balances to the cent. The check allows a gap of at most one part in ten million of the account&rsquo;s size.</p>
+              <p><strong>Why I use it.</strong> It&rsquo;s the rule that makes a table a SAM. A model run on a table that doesn&rsquo;t balance would create or lose money out of nowhere, so a build that misses it fails.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>2. Cross-entropy balancing</h3>
+              <div class="cs-eq-math"><math alttext="minimize over T at least 0 the sum over i j of w i j times KL of T i j and T zero i j" displaystyle="true"><mrow><munder><mo movablelimits="false">min</mo><mrow><mi>T</mi><mo>≥</mo><mn>0</mn></mrow></munder><munder><mo>∑</mo><mrow><mi>i</mi><mi>j</mi></mrow></munder><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi>KL</mi><mrow><mo>(</mo><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false">‖</mo><msubsup><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow><mn>0</mn></msubsup><mo>)</mo></mrow></mrow></math><math alttext="KL of x and p equals x log of x over p, minus x, plus p"><mrow><mi>KL</mi><mrow><mo>(</mo><mi>x</mi><mo stretchy="false">‖</mo><mi>p</mi><mo>)</mo></mrow><mo>=</mo><mi>x</mi><mspace width="0.1em"/><mi>ln</mi><mfrac><mi>x</mi><mi>p</mi></mfrac><mo>−</mo><mi>x</mi><mo>+</mo><mi>p</mi></mrow></math></div>
+              <p class="cs-eq-where">T<sup>0</sup> is the raw table from the sources, and w<sub>ij</sub> is how much I trust cell ij, high for observed cells and low for imputed ones. KL is the Kullback-Leibler divergence, which measures how far a number has moved in proportion to its size. The table also has to satisfy the identity above.</p>
+              <p><strong>In plain words.</strong> Find the balanced table closest to the raw one, where moving a trusted cell costs more than moving a guessed one.</p>
+              <p><strong>Why I use it.</strong> The sources disagree, so the raw table never balances on its own. RAS, the classic method, treats every total as exact and stops converging when sources conflict. Cross entropy treats them as estimates, reports which ones had to move, and keeps a cell that starts at zero at zero, so it never invents a flow.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>3. Solving it through the dual</h3>
+              <div class="cs-eq-math"><math alttext="T i j equals T zero i j times e to the power of lambda j minus lambda i, over w i j" displaystyle="true"><mrow><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><msubsup><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow><mn>0</mn></msubsup><mo>·</mo><mi>exp</mi><mrow><mo>(</mo><mfrac><mrow><msub><mi>λ</mi><mi>j</mi></msub><mo>−</mo><msub><mi>λ</mi><mi>i</mi></msub></mrow><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mfrac><mo>)</mo></mrow></mrow></math></div>
+              <p class="cs-eq-where">&lambda;<sub>i</sub> is one number per account, found by the solver.</p>
+              <p><strong>In plain words.</strong> At the best answer, every cell is its starting value times a factor set by just two numbers, one for the account that receives and one for the account that pays.</p>
+              <p><strong>Why I use it.</strong> That shrinks the problem from a few thousand cells to 140 account numbers. The direct version didn&rsquo;t finish one country in ten minutes, and this one balances a country in under a second. The solver also knows it&rsquo;s done exactly when every account balances.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>4. GDP from the income side</h3>
+              <div class="cs-eq-math"><math alttext="GDP equals value added plus taxes on production and products minus subsidies"><mrow><mi>GDP</mi><mo>=</mo><mi>VA</mi><mo>+</mo><mrow><mo>(</mo><mtext>taxes</mtext><mo>−</mo><mtext>subsidies</mtext><mo>)</mo></mrow></mrow></math><math alttext="gap equals the absolute difference between SAM GDP and reference GDP, over reference GDP" displaystyle="true"><mrow><mtext>gap</mtext><mo>=</mo><mfrac><mrow><mo fence="true" stretchy="false" rspace="0">|</mo><msub><mi>GDP</mi><mtext>SAM</mtext></msub><mo>−</mo><msub><mi>GDP</mi><mtext>ref</mtext></msub><mo fence="true" stretchy="false" lspace="0">|</mo></mrow><msub><mi>GDP</mi><mtext>ref</mtext></msub></mfrac></mrow></math></div>
+              <p class="cs-eq-where">VA is value added, the wages and capital income every industry pays. GDP<sub>ref</sub> is an official figure the table is never built from.</p>
+              <p><strong>In plain words.</strong> Add up what the economy pays workers and owners of capital, plus taxes on production and products, minus subsidies. That&rsquo;s GDP measured from the income side.</p>
+              <p><strong>Why I use it.</strong> A table can balance perfectly and still be the wrong size, and comparing it with an outside figure catches that. A gap up to 0.05% passes, and a gap over 0.5% puts a review flag on the build.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>5. The Leontief matrix, and two checks built on it</h3>
+              <div class="cs-eq-math"><math alttext="a i j equals Z i j over x j" displaystyle="true"><mrow><msub><mi>a</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><msub><mi>Z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>x</mi><mi>j</mi></msub></mfrac></mrow></math><math alttext="L equals the inverse of I minus A"><mrow><mi>L</mi><mo>=</mo><msup><mrow><mo>(</mo><mi>I</mi><mo>−</mo><mi>A</mi><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math><math alttext="a i i must stay below 1"><mrow><msub><mi>a</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mo>&lt;</mo><mn>1</mn></mrow></math><math alttext="value added over output stays between 0.10 and 0.98" displaystyle="true"><mrow><mn>0.10</mn><mo>≤</mo><mfrac><msub><mi>VA</mi><mi>j</mi></msub><msub><mi>x</mi><mi>j</mi></msub></mfrac><mo>≤</mo><mn>0.98</mn></mrow></math></div>
+              <p class="cs-eq-where">Z<sub>ij</sub> is what industry j buys from industry i, x<sub>j</sub> is industry j&rsquo;s output, and VA<sub>j</sub> is its value added. a<sub>ii</sub>, the diagonal of A, is the share of an industry&rsquo;s output that it buys back as its own input. The checks apply to industries that are at least 0.5% of the economy.</p>
+              <p><strong>In plain words.</strong> A, the Leontief matrix, says how many cents of each input an industry needs for every dollar it makes. L adds up every round of that buying, which is how an input-output model follows a change through a whole economy. A Leontief system needs a<sub>ii</sub> below 1 to work at all, so anything over 0.60 gets a human look. Value added also has to sit between 10 and 98 cents per dollar of output.</p>
+              <p><strong>Why I use it.</strong> A table can balance and match GDP and still be wrong inside. GLORIA&rsquo;s Sri Lanka table had its government industry buying back 0.884 of its own output, and it passed every check that existed at the time. The pipeline doesn&rsquo;t run L itself. It checks that A is sound, because any model built on these tables will rely on it. My trade-stress project ran on L directly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Build</h2>
+        <div>
+          <p>I&rsquo;m building it in layers, because each layer needs the one before it to be stable. The backbones, the split between wages and profit, and the balancing are done. Government and taxes are in progress this fall, and linking the countries to each other hasn&rsquo;t started.</p>
+          <p>One command builds a country end to end, and Sri Lanka takes about 20 seconds. If a build hits an error it writes nothing, so a broken table can never replace a good one.</p>
+          <details class="cs-more">
+            <summary>More detail: the build layers, the 140 accounts, and the tools</summary>
+            <table class="cs-table">
+              <thead><tr><th>Layer</th><th>What it adds</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>1. Backbone</td><td>Production, final demand and trade, from GLORIA, ADB or OECD ICIO</td><td>Done, with three adapters and 10 countries</td></tr>
+                <tr><td>2. Income and institutions</td><td>Wages versus profit, plus government, taxes and transfers</td><td>Wages and profit done. Government and taxes in progress this fall</td></tr>
+                <tr><td>3. Balance each country</td><td>Cross-entropy balancing and validation</td><td>Done</td></tr>
+                <tr><td>4. Link the countries</td><td>Reconciled trade between the country tables</td><td>Not started</td></tr>
+                <tr><td>5. Extensions</td><td>Energy, employment and finance, plus households by income decile</td><td>Not started. Household deciles planned this fall</td></tr>
+              </tbody>
+            </table>
+            <figure class="cs-fig"><a href="../assets/sam/kaz-blocks.webp"><img src="../assets/sam/kaz-blocks.webp" width="1600" height="1210" loading="lazy" alt="Block-level SAM for Kazakhstan 2023 in US$ billions: industries sell 722 to products, buy 476 of inputs and pay 247 to factors, which pay 247 to households; the enterprises row and column are empty."></a><figcaption>A real SAM summed into blocks, for Kazakhstan 2023 in US$ billions. It has the same shape as the toy. The empty enterprises row and column are institutional detail that&rsquo;s still to come.<span class="credit">Computed from GLORIA MRIO release 060 (ielab.info/resources/gloria), CC BY-NC-SA 4.0. Shared under the same licence.</span></figcaption></figure>
+            <ul>
+              <li>A full SAM has <strong>140 accounts</strong>: 59 industries, 59 products, 8 kinds of income, households, enterprises, government, 8 tax accounts, savings and investment, the rest of the world, and a statistical-discrepancy account that keeps unexplained gaps out of real accounts.</li>
+              <li>The OECD and ADB downloads are pinned by SHA-256 hash and retrieval date, so the pipeline notices if a source file changes. GLORIA&rsquo;s full table is about 5.8 GB, so the pipeline reads it once per country and caches that slice.</li>
+              <li>It&rsquo;s written in Python, with scipy and cvxpy for the optimization, pandas and Parquet for the data, matplotlib for the figures, and pytest for the tests.</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Testing and iteration</h2>
+        <div>
+          <p>Every build runs <strong>13 automated checks</strong>, from balance and the GDP identity to two structural-plausibility tests, and <strong>344 automated tests</strong> guard the code (passing as of 9 October 2026). The two structural thresholds were measured from real builds, and a threshold never gets widened just to silence a finding.</p>
+          <p><strong>When every check passes and the data is still wrong.</strong> For a month, the Sri Lanka build on GLORIA looked like the best pilot. Its GDP was within 0.6% of the World Bank figure, and every check was green. Building it again on a second source, ADB, exposed the problem. GLORIA records Sri Lanka&rsquo;s government sector buying <strong>$31.2bn of its own output</strong>, about 21.6% of the country&rsquo;s gross output. It also records $10.3bn of pipeline transport in a country with no pipeline network. Each error is an output and an input at the same time, so the two sides cancel out of GDP and out of the balance condition. That&rsquo;s why nothing caught them.</p>
+          <figure class="cs-fig"><a href="../assets/sam/sri-lanka-two-sources.webp"><img src="../assets/sam/sri-lanka-two-sources.webp" width="1600" height="1049" loading="lazy" alt="Dot plot of value added divided by gross output for Sri Lankan industries, GLORIA 2023 against ADB 2022, with a shaded plausible band from 0.10 to 0.98. GLORIA puts government at 0.07 and several service sectors near 1.0; the ADB values all sit in the band."></a><figcaption>The same Sri Lankan industries from two sources. GLORIA&rsquo;s government sector sits at 0.07, which means it buys nearly everything it produces. ADB&rsquo;s values are all plausible. The chart reads the finished, balanced table, where that one cell comes to $31.4bn. GLORIA&rsquo;s raw table records $31.2bn.<span class="credit">Computed from GLORIA MRIO release 060 (CC BY-NC-SA 4.0), ADB MRIO (CC BY 3.0 IGO) and OECD ICIO tables. Shared under CC BY-NC-SA 4.0.</span></figcaption></figure>
+          <p>So <strong>matching totals don&rsquo;t prove the structure is right.</strong> Sri Lanka now builds on ADB, and GLORIA supplies only the split between wages and profit. On ADB, apparel, the country&rsquo;s largest export, is 10.2% of output, against 3.6% on GLORIA. Two new checks now catch this kind of error from a single source, which matters because most of the target region has no second source.</p>
+          <p><strong>A second check.</strong> On 30 September an AI tool (Codex) audited and revised the code, and on 1 October a second AI tool (Claude Code) checked that work. The audit found a real error in the GDP formula, which counted relocated subsidies as tax revenue. Every reported GDP gap was recalculated with the fixed formula, and all 18 saved tables still balance below 10<sup>&minus;7</sup> with no negative cells.</p>
+          <p>Two big GDP gaps turned out to come from the data, not the pipeline. Nigeria came out 28% low because a 2025 rebasing of its national accounts raised its 2019 GDP by about 42%. Against the old accounts the gap is 1.8%, and Nigeria stays shelved. Turkmenistan came out +53.7% against the World Bank and &minus;4.5% against the IMF, which converts at a different exchange rate.</p>
+          <details class="cs-more">
+            <summary>More detail: the 13 checks, the new structure checks, and the second benchmark</summary>
+            <p>The 13 checks cover balance, the GDP identity, factor payments, control totals, the external account, how much balancing moved, non-finite values, negative cells, unlabelled provenance, empty accounts, the second GDP benchmark, and two structural-plausibility tests. The test suite includes stress tests that feed real pilot data with deliberately broken inputs.</p>
+            <figure class="cs-fig"><a href="../assets/sam/balancing.webp"><img src="../assets/sam/balancing.webp" width="1577" height="887" loading="lazy" alt="Dot plot for Kazakhstan 2023: each account&rsquo;s gap between row and column total before balancing (scattered up to about 2%) and after (all below the 1e-7 tolerance line)."></a><figcaption>Kazakhstan 2023, with one dot per account showing the gap between its row and column totals before and after balancing. Every account ends below the tolerance of 1&times;10<sup>&minus;7</sup>.<span class="credit">Computed from GLORIA MRIO release 060 (ielab.info/resources/gloria), CC BY-NC-SA 4.0. Shared under the same licence.</span></figcaption></figure>
+            <p>On ADB, the Sri Lanka table needed almost no balancing. Of the two new checks, one sets a plausible range for value added (an industry&rsquo;s output minus the inputs it buys) over output, and the other caps how much any sector can buy back of its own output.</p>
+            <p>The same rebasing mechanism later explained the gap from Uzbekistan&rsquo;s 2024 revision. After Turkmenistan, every build reports a second GDP benchmark next to the World Bank figure. Only the World Bank figure decides whether a build passes, though, so a gap can&rsquo;t be argued away after the fact.</p>
+          </details>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <p>GDP is the headline check. The income a SAM records should match the official figure for that country and year, and any gap over 0.5% puts a review flag on the build so someone has to explain it.</p>
+          <table class="cs-table">
+            <thead><tr><th>Build</th><th>Gap to World Bank GDP</th><th>What explains it</th></tr></thead>
+            <tbody>
+              <tr><td>Kazakhstan 2023, GLORIA</td><td><span class="num">+0.76%</span></td><td>Close match</td></tr>
+              <tr><td>Sri Lanka 2022, ADB</td><td><span class="num">&minus;2.82%</span></td><td>Within 3%. This is the Sri Lanka build in use</td></tr>
+              <tr><td>United States 2019, OECD ICIO</td><td><span class="num">&minus;0.05%</span></td><td>Close match</td></tr>
+              <tr><td>United States 2023, GLORIA</td><td><span class="num">+3.33%</span></td><td>Product taxes are probably counted twice, since GLORIA&rsquo;s US value added alone matches GDP to 0.001%. Inferred, not yet confirmed</td></tr>
+              <tr><td>Uzbekistan 2023, GLORIA</td><td><span class="num">&minus;15.71%</span></td><td>&minus;0.28% against the accounts before Uzbekistan&rsquo;s 2024 revision</td></tr>
+              <tr><td>Turkmenistan 2023, GLORIA</td><td><span class="num">+53.69%</span></td><td>&minus;4.53% against the IMF, which uses the official exchange rate</td></tr>
+              <tr><td>Kyrgyzstan 2023, GLORIA</td><td><span class="num">&minus;8.92%</span></td><td>Not yet explained. ADB also covers Kyrgyzstan, so it can be cross-checked</td></tr>
+            </tbody>
+          </table>
+          <p>The GDP chart for every build, how much of each table comes straight from data, and who earns the value added are in the gallery below. The charts use the 14 current builds. The 18 saved tables also include superseded and shelved ones, such as the GLORIA Sri Lanka table and Nigeria.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change, and what’s next</h2>
+        <div>
+          <ul>
+            <li><strong>Start version control on day one.</strong> The project has no Git history, so the record of every change is file timestamps and dated recovery copies. Now every substantive change gets a recovery copy and a tested rollback first.</li>
+            <li><strong>Check the structure from the start, as well as the totals.</strong> The ratio checks that would have flagged Sri Lanka right away only arrived after a second source exposed the problem.</li>
+          </ul>
+          <p><strong>Next, under the PEAK Summit Fellowship (fall 2026),</strong> I&rsquo;m adding government, tax and transfer accounts, starting with Sri Lanka 2022, and splitting households by income decile using World Bank PIP data. The fall ends with a final report and abstract for <strong>RISE</strong>, Northeastern&rsquo;s research expo. Later, the country tables get linked through their trade into one global web, with every country at full detail.</p>
+          <details class="cs-more">
+            <summary>More detail: the plan for government accounts</summary>
+            <p>The research for the government accounts is done. The central bank&rsquo;s and statistics department&rsquo;s 2022 tables are downloaded and checked, and four build options were compared. The recommended option, which isn&rsquo;t adopted yet, reconciles the fiscal and national-accounts totals first and then fits the ADB detail to them.</p>
+          </details>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="gallery">Gallery</h2>
+        <div>
+          <details class="cs-more">
+            <summary>More charts (6): GDP for every build, data provenance, who earns value added, and more</summary>
+            <div class="cs-gallery one-col">
+              <figure><img src="../assets/sam/gdp-check.webp" width="1600" height="954" loading="lazy" alt="Dot plot of SAM GDP minus benchmark GDP, in percent, for 14 builds, against the World Bank and a second benchmark, with a shaded band of plus or minus 3%. Most builds sit inside the band. Against the World Bank, Uzbekistan, Iran, Kyrgyzstan and Turkmenistan sit well outside it, and the United States 2023 GLORIA build sits just outside at +3.3%."><figcaption>Every build&rsquo;s GDP against the World Bank, whose figure decides whether a build passes, and against a second benchmark that helps explain the gaps. The shaded band marks &plusmn;3%.<span class="credit">Computed from GLORIA MRIO release 060 (CC BY-NC-SA 4.0), ADB MRIO (CC BY 3.0 IGO) and OECD ICIO tables. Shared under CC BY-NC-SA 4.0. GDP benchmarks: World Bank World Development Indicators (CC BY 4.0) and IMF World Economic Outlook.</span></figcaption></figure>
+              <figure><img src="../assets/sam/provenance.webp" width="1600" height="984" loading="lazy" alt="Stacked bars showing, for each of the 14 builds, the share of total value that is source-derived, allocated by assumption, or an imputed placeholder. Source-derived shares run from 74% to 84%, except Sri Lanka at 58%."><figcaption>How much of each SAM comes straight from data. In every build except Sri Lanka, 74&ndash;84% of the value is read from a source, and the rest is flagged as allocated or placeholder.<span class="credit">Computed from GLORIA MRIO release 060 (CC BY-NC-SA 4.0), ADB MRIO (CC BY 3.0 IGO) and OECD ICIO tables. Shared under CC BY-NC-SA 4.0.</span></figcaption></figure>
+              <figure><img src="../assets/sam/factor-split.webp" width="1600" height="962" loading="lazy" alt="Stacked bars of labour, capital and mixed-income shares of factor income for ten countries. The United States is 54% labour, 37% capital and 9% mixed income."><figcaption>Who earns the value added in each SAM. The US labour share, 54%, is in line with published estimates of 53&ndash;55%.<span class="credit">Computed from GLORIA MRIO release 060 (CC BY-NC-SA 4.0), ADB MRIO (CC BY 3.0 IGO) and OECD ICIO tables. Shared under CC BY-NC-SA 4.0.</span></figcaption></figure>
+              <figure><img src="../assets/sam/kaz-full-matrix.webp" width="1538" height="1282" loading="lazy" alt="Heatmap of the full 140 by 140 SAM for Kazakhstan 2023 on a log scale, with 3,467 non-zero cells: a diagonal of industries selling their own products and a dense block of industries buying inputs from each other."><figcaption>The full 140 &times; 140 matrix for Kazakhstan 2023, with 3,467 non-zero cells. <span class="credit">Computed from GLORIA MRIO release 060 (ielab.info/resources/gloria), CC BY-NC-SA 4.0. Shared under the same licence.</span></figcaption></figure>
+              <figure><img src="../assets/sam/balancer-effort.webp" width="1600" height="929" loading="lazy" alt="Bar chart on a log scale of the total amount the balancer moved in each of 14 builds, as a percent of benchmark GDP. The nine GLORIA builds sit above the 0.5% review threshold, from 1.11% for the United States 2023 to 19.01% for Afghanistan 2023. The three OECD ICIO builds moved 0.001% to 0.003%, and the two ADB builds about zero."><figcaption>How much the balancer had to move in each build, as a share of GDP. The OECD and ADB builds needed almost no adjustment. Every GLORIA build moved more than 0.5% of GDP, which adds a review flag to its build report. <span class="credit">Computed from GLORIA MRIO release 060 (CC BY-NC-SA 4.0), ADB MRIO (CC BY 3.0 IGO) and OECD ICIO tables. Shared under CC BY-NC-SA 4.0.</span></figcaption></figure>
+              <figure><img src="../assets/sam/source-years.webp" width="1600" height="592" loading="lazy" alt="Timeline from 2000 to 2024. ADB national tables cover 2000 to 2022, and a build uses 2022. The OECD ICIO 2025 file covers 2016 to 2022, with builds for 2019 and 2022. GLORIA release 060 covers 2023, which is built. GTAP 12 has reference year 2023, but the national tables beneath it date from 2003 for Kyrgyzstan to 2018 for Uzbekistan."><figcaption>The years each source covers, and the years actually built. GTAP 12 is dated 2023, but the national tables underneath it are 5 to 20 years older.</figcaption></figure>
+            </div>
+          </details>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="optimized-learning.html"><span>Previous project</span><strong>Optimized Learning</strong></a>
+      <a href="nasa-lspace.html"><span>Next project</span><strong>NASA L’SPACE proposal</strong></a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

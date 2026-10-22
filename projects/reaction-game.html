@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reaction-Time Game | Benny Lee</title>
+  <meta name="description" content="A Chernobyl-themed reaction-time game on a Raspberry Pi Pico arcade panel, with buttons, switches, a valve, LEDs, and buzzers. I wrote the game logic and tuned its speed and prize cutoffs from user trials.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Reaction-Time Game | Benny Lee">
+  <meta property="og:description" content="A Chernobyl-themed reaction-time game on a Raspberry Pi Pico arcade panel, with buttons, switches, a valve, LEDs, and buzzers. I wrote the game logic and tuned its speed and prize cutoffs from user trials.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-reaction side-hw">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">Reaction-Time Game</h1>
+        <p class="cs-lede">A Chernobyl-themed carnival game where you hit each input as it lights up, faster and faster, until the reactor melts down. I wrote the game logic in Python. Using stats from 30+ user trials, I tuned the speed so an average game ran under 2 minutes and calculated prize cutoffs so the game would turn a profit. I also designed and painted the outside.</p>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Embedded systems developer</dd></div>
+          <div><dt>Team</dt><dd>4 people</dd></div>
+          <div><dt>Dates</dt><dd>Sep–Dec 2025</dd></div>
+          <div><dt>Tools</dt><dd>Raspberry Pi Pico, Python, laser cutter, 3D printer</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-reaction side-hw">
+      <figure class="panel-media">
+        <div class="stage stage-reaction">
+                <img src="../assets/reaction-game/front.webp" width="828" height="954" alt="Front view of the reaction game: a yellow and black striped panel with green, red, and orange arcade buttons and two radiation-symbol discs">
+                <img src="../assets/reaction-game/angle.webp" width="964" height="1099" alt="Three-quarter view of the reaction game showing its hazard-striped side walls and deep control surface">
+                <span class="hazard" aria-hidden="true"></span>
+              </div>
+        <figcaption>Embedded Systems Reaction-Time Game, Sep–Dec 2025</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>“React to the Pressure” was our game for the Fall 2025 Expo, built around engineering failure. It looks like a power-plant control panel. Players try to throttle a failing reactor by shutting off blinking lights in time. I built the game logic in Python, with <strong>&lt;1 ms</strong> timing precision and about <strong>98%</strong> input accuracy. Across <strong>30+</strong> user trials, I also fixed <strong>5</strong> hardware-software integration bugs.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>The game had to fit the expo’s engineering-failure theme and hold up to players hitting it hard. It also had to be cheap to build, so apart from the laser-cut wood, nearly all the materials came from the FYELIC and EXP labs. And as a carnival game it had to make money, which meant setting the prize cutoffs high enough that the game stayed profitable.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <p>The panel has six inputs. Three are arcade buttons, two are switches, and one is a 3D-printed valve, and each has an LED above it that lights when it’s time to hit it. Buzzers add sound. Everything is wired through a breadboard to a Raspberry Pi Pico, a small microcontroller board, which runs a Python script. The script reads the inputs and keeps score, and it lights the LEDs on a schedule that speeds up as the game goes on. It catches presses with pin interrupts, which react the moment an input changes, so no press gets missed while the game loop is busy with something else.</p>
+          <p>The code had two layers. A teammate wrote the low-level functions that turn each part on and off and read its input. I wrote the game on top of those functions. My code decides when each new LED lights up, handles the inputs and timing, and checks whether you’ve won or lost. I also designed the outside, with the black-and-yellow hazard stripes that give it its “nuclear” look.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Build</h2>
+        <div>
+          <ul>
+            <li>Laser-cut wood shell, glued together for the final version.</li>
+            <li>Large LED buttons, switches, buzzers, and a 3D-printed valve and lever handles.</li>
+            <li>I put the first prototype together with electrical tape, and I painted the final version.</li>
+            <li>The final wiring was soldered so the connections would hold up to rough play.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Testing and iteration</h2>
+        <div>
+          <p><strong>Tuning the game with real players.</strong> Most of my time went here. We ran <strong>30+</strong> user trials with classmates and teammates, and I used the results to set how fast the game speeds up, by shrinking the time between each new button to press or valve to turn. We kept adjusting the speed until the average game lasted under 2 minutes, about how long people spend at each carnival game. I also analyzed the trial stats and used them to calculate the survival times for a small prize and a big prize, so the game would turn a profit.</p>
+          <figure class="cs-fig"><video controls muted playsinline preload="none" poster="../assets/reaction-game/round-poster.webp" width="360" height="520" aria-label="Video of Benny playing the reaction game, pressing the green, red and yellow arcade buttons as each one lights up"><source src="../assets/reaction-game/round.mp4" type="video/mp4"></video><figcaption>Me playing twelve seconds of a round. Each button lights up when it&rsquo;s time to press it.</figcaption></figure>
+          <p>Along the way we fixed <strong>5</strong> hardware-software integration bugs, testing and refining each build as we went. Here are three of them.</p>
+          <ul>
+            <li><strong>Valve.</strong> I fixed the midpoint threshold on the valve’s potentiometer, the knob sensor that decides when a turn counts.</li>
+            <li><strong>Lag.</strong> I added edge detection, so the code reacts the instant an input changes, to counteract lag.</li>
+            <li><strong>Lever.</strong> The lever used to work as an on/off switch. I changed it so each flick counts as one input.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <ul>
+            <li>Timing precision: under 1 ms</li>
+            <li>Input accuracy: about 98%</li>
+            <li>User trials: 30+</li>
+            <li>Integration bugs fixed: 5</li>
+          </ul>
+          <p><strong>How a round works.</strong> At first an LED lights every 2 seconds, and the gap shrinks as you play. Wrong inputs shrink it faster. The game ends if you miss a lit input within 2 seconds, or if all 6 inputs are lit at once. Last under 110 seconds and you win no prize. Last 110 to 160 seconds and you get a small prize, and past 160 seconds you get a big one.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change</h2>
+        <div>
+          <p>I’d run more playtests. With a bigger sample we could pin down the average survival time and place the prize cutoffs, which were set at 110 and 160 seconds, more accurately.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="gallery">Gallery</h2>
+        <div>
+          <div class="cs-gallery">
+            <figure><img src="../assets/reaction-game/front.webp" width="828" height="954" loading="lazy" alt="Front view of the reaction game with green, red, and orange arcade buttons under two radiation-symbol discs"><figcaption>Front view</figcaption></figure>
+            <figure><img src="../assets/reaction-game/angle.webp" width="964" height="1099" loading="lazy" alt="Three-quarter view of the reaction game showing its hazard-striped side walls"><figcaption>Three-quarter view</figcaption></figure>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="nasa-lspace.html"><span>Previous project</span><strong>NASA L’SPACE proposal</strong></a>
+      <a href="budget-box.html"><span>Next project</span><strong>Gamified Budget Box</strong></a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

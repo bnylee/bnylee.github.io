@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NASA L’SPACE proposal | Benny Lee</title>
+  <meta name="description" content="As principal investigator, Benny Lee led a NASA L’SPACE proposal for a self-healing lunar power grid made of autonomous smart nodes.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="NASA L’SPACE proposal | Benny Lee">
+  <meta property="og:description" content="As principal investigator, Benny Lee led a NASA L’SPACE proposal for a self-healing lunar power grid made of autonomous smart nodes.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-nasa side-both">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">NASA L’SPACE proposal</h1>
+        <p class="cs-lede">I was principal investigator for a 10-person team from several universities, and I led our proposal for a Moon-base power grid that would repair itself. I owned the system architecture and the CAD.</p>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Principal investigator</dd></div>
+          <div><dt>Team</dt><dd>10 people, multi-university</dd></div>
+          <div><dt>Program</dt><dd>NASA L’SPACE NPWEE Academy, Jan–May 2026</dd></div>
+          <div><dt>Focus</dt><dd>System architecture, CAD, prototype integration</dd></div>
+        </dl>
+        <a class="cad-btn" href="#gallery" data-cad-open="cad-nasa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V3l18 18z"/><path d="M7.5 16.5v-5l5 5z"/></svg> SolidWorks files <span>6</span></a>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-nasa side-both">
+      <figure class="panel-media">
+        <div class="stage stage-cad">
+          <img src="../assets/nasa-lspace/cad-closed.webp" width="1600" height="1185" alt="SolidWorks concept model of the smart power node: a flanged aluminum box with a finned radiator lid, two orange-banded DC bus connectors and a priority-load connector on the front, and green, amber, and red status LEDs">
+        </div>
+        <figcaption>Concept CAD of the node in SolidWorks.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>We proposed an <strong>Autonomous Modular Power Distribution and Recovery Node</strong>. It’s a smart hub on a DC microgrid, a small self-contained power network that runs on direct current. The node would watch its own electrical and thermal state, spot faults, isolate the faulty module, and reroute power to the priority loads, all with no human involved. We pitched it to NASA mentors at a 4-hour panel.</p>
+          <p>This was a proposal, not a built device. The numbers below are design targets taken from published research, and I didn’t measure any of them. The build plan is still only a plan, and none of that work has been done.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>A power system on the Moon has to keep running through faults, radiation, and big temperature swings. Nobody on Earth can step in quickly, since a radio signal takes about 2.6 seconds to reach the Moon and come back.</p>
+          <ul>
+            <li>Today’s advanced microgrids rely on a single master controller. If it fails, the whole grid can go down.</li>
+            <li>They usually take 50–100 ms to detect a fault and switch to a backup. Sensitive electronics can reset if the power drops for more than 10–20 ms.</li>
+            <li>They’re reactive, and they wait for a human to authorize a reroute.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <p>Each node would combine <strong>bidirectional power converters</strong>, <strong>voltage and current sensors</strong>, <strong>fast solid-state switches</strong>, and <strong>embedded control hardware</strong>. The nodes would be spread through habitats, rovers, and payloads, so the grid would have no single point of failure.</p>
+          <p>Control would run in two layers, so isolating a fault never depends on the nodes talking to each other. <strong>Layer 1</strong> is local to each node and would respond in microseconds. It uses hardcoded droop control and a di/dt trip, which cuts the circuit when current rises too fast. <strong>Layer 2</strong> lets the nodes reach agreement over a CAN bus within milliseconds. It tunes the droop coefficients and load priority.</p>
+          <p>We set design targets for the node. It would convert power at about 98% efficiency, and its voltage would respond to transients within 10–15 ms. It would isolate a fault within 15 ms using solid-state protection. In high-voltage systems, the output ripple would be about 1–2 V.</p>
+          <p>I modeled the node in SolidWorks for the proposal, but the file was later corrupted. The model shown here is a rebuild I made with AI assistance, following the proposal’s parts list and the architecture I led. Its dimensions are illustrative.</p>
+          <p>The model puts the proposal’s parts in one sealed aluminum box:</p>
+          <ul>
+            <li><strong>Power path.</strong> DC bus A and bus B come in on the front, next to a priority-load output. A current sensor sits behind each input, and four silicon-carbide solid-state switches are clamped to a copper bar.</li>
+            <li><strong>Heat path.</strong> There’s no air on the Moon to carry heat away. So the copper bar runs up into a finned radiator lid, and the flanged base bolts to a cold plate.</li>
+            <li><strong>Conversion.</strong> Each of the two bidirectional converter stages has a toroidal inductor and a film capacitor, and a bank of six capacitors steadies the DC bus.</li>
+            <li><strong>Control.</strong> A separate controller board on standoffs carries the microcontroller and CAN transceivers. The CAN in and CAN out ports on the back link the nodes one after another for Layer 2. A telemetry port sits beside them.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Build</h2>
+        <div>
+          <p>We planned to build a lab-scale demonstration unit and testbed in four phases of about three months each. That would leave a three-month buffer before the Artemis VI landing. The team would work in Scrum sprints and track tickets in Jira at about 10 story points per person per week.</p>
+          <table class="cs-table">
+            <thead><tr><th>Phase</th><th>When</th><th>Work</th><th>Milestone</th></tr></thead>
+            <tbody>
+              <tr><td>1. Design</td><td>Jul–Sep 2026</td><td>System architecture, MATLAB microgrid modeling, fault-detection logic, material selection</td><td>Architecture approved, demo for stakeholders</td></tr>
+              <tr><td>2. Build</td><td>Oct–Dec 2026</td><td>High-power parts, C++ control kernel, PCB assembly, Python telemetry</td><td>Hardware prototype, power-on self-test</td></tr>
+              <tr><td>3. Integration</td><td>Jan–Mar 2027</td><td>C++ into switchgear, sensor calibration for lunar conditions, life-support energy simulations</td><td>Integrated modular node</td></tr>
+              <tr><td>4. Testing</td><td>Apr–Jun 2027</td><td>Fault injection, stress testing across day and night cycles, 30-day hardware-in-the-loop run</td><td>Proof of concept, final risk analysis, test readiness report</td></tr>
+            </tbody>
+          </table>
+          <p>We estimated 2,800 hours in total. That breaks down to 450 for project management, 950 for hardware, 800 for software, and 600 for testing and telemetry validation.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Testing and iteration</h2>
+        <div>
+          <p>Because this is a proposal, the testing here is only planned. The proposal names four hard problems and how we would handle each one.</p>
+          <ul>
+            <li><strong>DC faults are hard to detect.</strong> DC current never passes through zero on its own the way AC current does, and fault current can pass 10 times its rating within 5 ms. Our answer was di/dt threshold detection at each converter output, paired with silicon-carbide solid-state breakers that interrupt in 1–10 microseconds.</li>
+            <li><strong>Earth can’t intervene.</strong> The two-layer design covers this, because isolating a fault never waits on the nodes talking to each other.</li>
+            <li><strong>Several time scales at once.</strong> A missed interrupt can add 1–2 ms. The plan was bare-metal firmware or firmware on a real-time operating system (RTOS), either way with fixed interrupt priority. Gate drivers with Miller clamps would keep the switches from turning on by mistake.</li>
+            <li><strong>No qualification standard covers −233 °C to +127 °C.</strong> We planned hardware-in-the-loop testing instead, where real hardware runs against a simulation, on a low-cost FPGA board with a capacitor bank to inject faults. Flight qualification would come later, in a phase 2.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <ul>
+            <li>Sent NASA the full proposal, including a 12-month, 4-phase build-and-test plan</li>
+            <li>Pitched to NASA mentors at a 4-hour panel</li>
+            <li>Submitted a NASA New Technology Report (Form 1679) on the design, with me listed as Innovator #1</li>
+            <li>Set a target of isolating faults in under 15 ms, compared with 50–100 ms in current microgrids</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change</h2>
+        <div>
+          <p>I connected with each team member personally. The more important job was connecting them with each other, and next time I’d do more of that.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="gallery">Gallery</h2>
+        <div>
+          <div class="cs-gallery">
+            <figure><img src="../assets/nasa-lspace/cad-open-back.webp" width="1600" height="1138" loading="lazy" alt="Concept model with the lid off, seen from the back: four black silicon-carbide switches clamped to a copper bar, two copper toroid inductors, yellow film capacitors, a row of blue bus capacitors, the navy controller board, and two CAN connectors and a telemetry port on the back wall"><figcaption>Lid off, from the back, showing the switches on the copper bar, the converters, and the controller board</figcaption></figure>
+            <figure><img src="../assets/nasa-lspace/cad-open-front.webp" width="1600" height="1130" loading="lazy" alt="Concept model with the lid off, seen from the front: the three front connectors, the tall copper heat bar behind them, inductors, capacitors, and the controller board on brass standoffs"><figcaption>Lid off, from the front. The copper bar carries heat up to the lid.</figcaption></figure>
+            <figure><img src="../assets/nasa-lspace/cad-top.webp" width="1600" height="1231" loading="lazy" alt="Top view of the concept model with the lid off, showing the board layout from the front connectors and current sensors to the controller board and back-wall connectors"><figcaption>Top view of the layout, lid off</figcaption></figure>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="sam-pipeline.html"><span>Previous project</span><strong>SAM Pipeline</strong></a>
+      <a href="reaction-game.html"><span>Next project</span><strong>Reaction-Time Game</strong></a>
+    </nav>
+
+
+    <dialog class="cad" id="cad-nasa" data-tone="light" aria-labelledby="cad-nasa-title">
+      <div class="cad-head">
+        <div><h2 id="cad-nasa-title">NASA L’SPACE smart node: SolidWorks files</h2><p>Concept model, rebuilt with AI assistance after the original file was corrupted; dimensions are illustrative</p></div>
+        <button class="cad-x" type="button" data-cad-close>Close</button>
+      </div>
+      <div class="cad-stage">
+        <figure class="cad-slide is-active"><img src="../assets/nasa-lspace/cad-closed.webp" width="1600" height="1185" loading="lazy" alt="SolidWorks concept model of the smart power node with the lid on, from the front: a flanged aluminum box with a finned radiator lid, three orange-banded front connectors, and green, amber, and red status LEDs"><figcaption>Lid on, from the front</figcaption></figure>
+        <figure class="cad-slide"><img src="../assets/nasa-lspace/cad-closed-back.webp" width="1600" height="1202" loading="lazy" alt="Concept model with the lid on, from the back: the finned lid, a telemetry port, and two CAN connectors on the back wall"><figcaption>Lid on, from the back: the telemetry port and the two CAN connectors</figcaption></figure>
+        <figure class="cad-slide"><img src="../assets/nasa-lspace/cad-front.webp" width="1600" height="606" loading="lazy" alt="Straight-on front view of the concept model: DC bus A and B and the priority-load connector, each with an orange high-voltage band, beside green, amber, and red status LEDs"><figcaption>Front view: DC bus A and B, the priority-load output, and the status LEDs</figcaption></figure>
+        <figure class="cad-slide"><img src="../assets/nasa-lspace/cad-open-front.webp" width="1600" height="1130" loading="lazy" alt="Concept model with the lid off, seen from the front: the three front connectors, the tall copper heat bar behind them, inductors, capacitors, and the controller board on brass standoffs"><figcaption>Lid off, from the front: the copper bar carries heat up to the lid</figcaption></figure>
+        <figure class="cad-slide"><img src="../assets/nasa-lspace/cad-open-back.webp" width="1600" height="1138" loading="lazy" alt="Concept model with the lid off, seen from the back: four black silicon-carbide switches clamped to a copper bar, two copper toroid inductors, yellow film capacitors, a row of blue bus capacitors, the navy controller board, and two CAN connectors and a telemetry port on the back wall"><figcaption>Lid off, from the back: switches on the copper bar, converters, and the controller board</figcaption></figure>
+        <figure class="cad-slide"><img src="../assets/nasa-lspace/cad-top.webp" width="1600" height="1231" loading="lazy" alt="Top view of the concept model with the lid off, showing the board layout from the front connectors and current sensors to the controller board and back-wall connectors"><figcaption>Top view of the layout, lid off</figcaption></figure>
+      </div>
+      <div class="cad-nav"><button type="button" data-cad-prev>Previous</button><span class="cad-count">1 / 6</span><button type="button" data-cad-next>Next</button></div>
+    </dialog>
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

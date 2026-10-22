@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimized Learning | Benny Lee</title>
+  <meta name="description" content="An AI study app I’m building. It organizes course materials into a SQLite database, and its tutor cites the course files in its answers.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Optimized Learning | Benny Lee">
+  <meta property="og:description" content="An AI study app I’m building. It organizes course materials into a SQLite database, and its tutor cites the course files in its answers.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-learning side-sw">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">Optimized Learning</h1>
+        <p class="cs-lede">An AI study app I’m building. It sorts each class’s materials into a database, and its tutor answers questions by citing the actual course files.</p>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Full-stack developer</dd></div>
+          <div><dt>Dates</dt><dd>Apr 2026–present</dd></div>
+          <div><dt>Stack</dt><dd>Python, SQLite, BM25</dd></div>
+          <div><dt>Status</dt><dd>In development</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-learning side-sw">
+      <figure class="panel-media">
+        <div class="stage stage-tree">
+                <div class="otree" role="img" aria-label="How the app organizes a class. Your workspace holds your classes, such as Statics, Thermodynamics and Physics II. Each class sorts its material into up to eight types: syllabus, notes, lectures, homework, quizzes, tests, lab and textbook. Each file is read and split into passages, with page numbers kept. A filed syllabus also becomes a digest and a list of dates you can correct. When you ask a question, the tutor ranks the passages against it, takes up to 20,000 characters, and lists the sources it was given, for example S1, week-3-notes.pdf, page 2.">
+                  <div class="ot-row"><span class="ot-tag">Workspace</span><div class="ot-body"><span class="ot-node">Your classes, saved on your own computer</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Class</span><div class="ot-body"><span class="ot-node is-on">Statics</span><span class="ot-node is-dim">Thermodynamics</span><span class="ot-node is-dim">Physics II</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Material</span><div class="ot-body ot-chips"><span>Syllabus</span><span class="is-on">Notes</span><span>Lectures</span><span>Homework</span><span>Quiz</span><span>Test</span><span>Lab</span><span>Textbook</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">File</span><div class="ot-body"><span class="ot-node is-on ot-file">week-3-notes.pdf</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Passages</span><div class="ot-body"><span class="ot-node">Read and split into passages, with page numbers kept</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Answer</span><div class="ot-body"><span class="ot-node is-on">The tutor ranks passages against your question, takes up to 20,000 characters, and lists the sources it was given <span class="ot-cite">[S1] week-3-notes.pdf, page 2</span></span></div></div>
+                </div>
+              </div>
+              <figcaption>Optimized Learning, Apr 2026–present. How the app organizes a class, from the workspace down to a cited answer. The class and file names are examples.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>A Python pipeline sorts <strong>8 types of course materials</strong> per class into a <strong>17-table SQLite database</strong>. For each question, the AI tutor uses BM25, a keyword-ranking method, to pull up to 20,000 relevant characters. That lets it cite the course files in its answers.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>Most study tools give every student the same generic tutor, whether it’s week 1 or week 14. I wanted one that teaches only from what my course has actually covered and follows my instructor’s notation. It should get closer to my real course with every lecture, homework, or quiz I give it.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <ul>
+            <li>A Python pipeline sorts up to 8 types of course materials per class into a 17-table SQLite database.</li>
+            <li>The tutor uses BM25 retrieval to pick up to 20,000 relevant characters per question, so it can cite course files.</li>
+          </ul>
+          <figure class="cs-fig"><a href="../assets/optimized-learning/filing.webp"><img src="../assets/optimized-learning/filing.webp" width="1580" height="930" loading="lazy" alt="Screenshot of the Optimized Learning app. A file called statics-week3-notes.txt sits under Notes, marked Read and ready for the tutor, with the line Filed automatically as Notes. Its name says notes. Below it, a box headed What would help most next suggests adding a past homework or quiz."></a><figcaption>The app running on a demo class with one sample note. It read the file, filed it as Notes on its own, and suggested what to add next.</figcaption></figure>
+          <p>The design picks BM25 keyword scoring over embeddings, the meaning-based vectors many AI search tools use, on purpose. The first version had two real bugs. The student’s question never reached the code that picked material, and files were read in alphabetical order, so a file late in the list could be cut off entirely. A vector database wouldn’t have fixed either one, and it wouldn’t have told the tutor what it left out. BM25 scores each passage against the question within that one class and picks the same passages every time. It fills the character budget in turns across categories, so a whole textbook can’t crowd out the syllabus. The cost is that it can miss synonyms. If a test set of real questions shows that hurting answers, I’ll revisit it.</p>
+          <p>The database tracks classes, uploaded files and their extracted text, tutor conversations, the exact passages each answer was given, syllabus deadlines, and practice sets.</p>
+          <p>I directed AI coding assistants (Claude and Codex) and reviewed their work. The design decisions, a dated log of who built what, and the assistants&rsquo; reviews of each other&rsquo;s work are recorded in the repository.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Testing and iteration</h2>
+        <div>
+          <ul>
+            <li>Each of the 8 schema upgrades (changes to the database layout) takes a verified snapshot first and can be rolled back.</li>
+            <li>The app has 960+ automated tests, 846 in Python and 122 for the front end.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <ul>
+            <li>Course material types: 8 per class</li>
+            <li>Database: 17 SQLite tables</li>
+            <li>Retrieved context: up to 20,000 characters per question</li>
+            <li>Schema upgrades: 8, with backups and rollback</li>
+            <li>Automated tests: 960+</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change</h2>
+        <div>
+          <p>Next up are progress tracking and full backup and restore. I also want to build a set of real questions to test whether keyword selection misses things embeddings would catch. Once the code is ready to release, it will be public under AGPL-3.0.</p>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="matlab-economics.html"><span>Previous project</span><strong>AI Compute Economics in MATLAB</strong></a>
+      <a href="sam-pipeline.html"><span>Next project</span><strong>SAM Pipeline</strong></a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

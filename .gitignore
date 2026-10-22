@@ -1,0 +1,17 @@
+# Allow-list: only the site itself is published. Anything not listed here
+# (notes, drafts, screenshots, CLAUDE.md) stays on this computer.
+/*
+!/.gitignore
+!/.nojekyll
+!/CNAME
+!/README.md
+!/index.html
+!/404.html
+!/favicon.svg
+!/css/
+!/js/
+!/assets/
+!/projects/
+
+# Starter file for new case studies, not a page
+/projects/_template.html

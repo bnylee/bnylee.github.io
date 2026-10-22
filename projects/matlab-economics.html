@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Compute Economics in MATLAB | Benny Lee</title>
+  <meta name="description" content="A MATLAB analysis of NVIDIA stock data, used to think through the cost and risk of the computing hardware behind autonomous systems.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Compute Economics in MATLAB | Benny Lee">
+  <meta property="og:description" content="A MATLAB analysis of NVIDIA stock data, used to think through the cost and risk of the computing hardware behind autonomous systems.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-matlab side-sw">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">AI Compute Economics in MATLAB</h1>
+        <p class="cs-lede">I studied NVIDIA’s stock in MATLAB and used it as a stand-in for the cost and risk of the AI computing hardware that autonomous systems run on.</p>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Analyst</dd></div>
+          <div><dt>Tool</dt><dd>MATLAB</dd></div>
+          <div><dt>Data</dt><dd>NVIDIA prices, sector averages</dd></div>
+          <div><dt>Used for</dt><dd>Cost and schedule risk in my NASA proposal</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-matlab side-sw">
+      <figure class="panel-media">
+        <div class="stage stage-fig">
+                <div class="fig-body">
+                  <img src="../assets/matlab-economics/nvda-trend.webp" width="1400" height="899" loading="lazy" alt="MATLAB line chart of NVIDIA closing price by trading day, rising from about $10 to over $200, with a dashed linear trend line">
+                </div>
+              </div>
+        <figcaption>NVIDIA closing price with a fitted trend line (MATLAB).</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>I analyzed NVIDIA’s closing prices, volatility, and returns in MATLAB, and compared average prices across market sectors. I used the results to argue for cost margins and schedule buffers in the early planning of my NASA power-node proposal.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>I was already working with global economic data in Northeastern’s Financial Stress Lab, so I went looking for the same kind of data on the economics of AI. NVIDIA matters here because AI computing hardware decides whether autonomous functions are feasible. A modular lunar power node needs onboard computing to monitor its own health, detect faults, and run its recovery logic. When that hardware market swings, the node’s cost and risk move with it.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <p>My script calculated an average closing price of <strong>$65.89</strong> and a variance of volatility of 0.028912. It also computed the RSI, or relative strength index, which tracks how strongly a price has been moving up or down. The RSI ranged between 8.2 and 97.0. The script then fit two trend lines. One was price against trading day (<span class="mono">y = 0.1374x − 24.82</span>), and the other was 20-day volatility against log returns.</p>
+          <p>I made three charts. The first shows NVIDIA’s price with its trend line, and the second plots volatility against returns. The third compares average closing price by sector, with sectors that include commodities, energy, software, and semiconductors.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <p>The trend line and volatility against returns showed no clear relationship. That supports the risk framing for building cost margins and schedule buffers into a plan early, though it isn&rsquo;t a full cost model. The sector chart showed where AI-related stocks sat compared with other sectors.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change</h2>
+        <div>
+          <p>Stock prices only stand in indirectly for what components really cost and whether you can get them. So this work helps with the risk side of a cost model, but it isn’t a complete cost model. Next I’d add actual component prices and lead times.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="gallery">Gallery</h2>
+        <div>
+          <div class="cs-gallery">
+            <figure><img src="../assets/matlab-economics/nvda-trend.webp" width="1400" height="965" loading="lazy" alt="MATLAB line chart of NVIDIA closing price by trading day with a dashed linear trend line"><figcaption>NVIDIA closing price with trend line</figcaption></figure>
+            <figure><img src="../assets/matlab-economics/volatility-returns.webp" width="1400" height="918" loading="lazy" alt="MATLAB scatter plot of 20-day volatility against log returns"><figcaption>20-day volatility against log returns</figcaption></figure>
+            <figure><img src="../assets/matlab-economics/sector-prices.webp" width="1400" height="969" loading="lazy" alt="MATLAB bar chart of average closing price by sector, with semiconductor equipment highest"><figcaption>Average closing price by sector</figcaption></figure>
+            <figure><pre class="cs-console">=== CALCULATED VALUES ===
+1. Average closing price: $65.89
+2. Variance of volatility: 0.028912
+3. Min RSI: 8.2, Max RSI: 97.0
+
+=== FIT EQUATIONS ===
+Price trend: y = 0.1374x + -24.82
+Volatility vs Returns: y = -0.000x + 0.002</pre><figcaption>Calculated values and fit equations, as MATLAB printed them</figcaption></figure>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="gtap-trade-stress.html"><span>Previous project</span><strong>GTAP Trade Stress Model</strong></a>
+      <a href="optimized-learning.html"><span>Next project</span><strong>Optimized Learning</strong></a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benny Lee | Mechanical engineering and software</title>
+  <meta name="description" content="Benny Lee is a mechanical engineering student at Northeastern University who designs hardware and writes the code that runs it.">
+  <meta name="theme-color" content="#f5f3ee">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Benny Lee | Mechanical engineering and software">
+  <meta property="og:description" content="Hardware and software projects by Benny Lee, Mechanical Engineering, Northeastern University.">
+  <!-- TODO: add og:image (1200x630) and og:url once the site has a domain -->
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <!-- GTAP globe: d3-geo (ISC licence, js/vendor), country shapes, then the globe -->
+  <script src="js/vendor/d3-array.min.js" defer></script>
+  <script src="js/vendor/d3-geo.min.js" defer></script>
+  <script src="js/globe-data.js" defer></script>
+  <script src="js/globe.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="#top">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="#research">Research</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#software">Software</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-resume" href="assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero: a Venn diagram. Mechanical Engineering (blue) and Computer Science (coral)
+         overlap at the +. Each circle lists that major's skills and links to its projects. -->
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <h1 id="hero-name">Benny Lee</h1>
+      <p class="sr-only">Mechanical Engineering, Northeastern University</p>
+      <div class="venn">
+        <span class="c me" aria-hidden="true"></span>
+        <span class="c cs" aria-hidden="true"></span>
+        <div class="blk me">
+          <h2>Mechanical <br>Engineering</h2>
+          <ul aria-label="Mechanical engineering skills"><li>SolidWorks</li><li>Siemens NX</li><li>AutoCAD</li><li>Tinkercad</li><li>Laser cutting</li><li>3D printing</li></ul>
+          <a class="btn me" href="#hardware"><b>Hardware<span class="long"> projects</span></b><span class="n">4</span></a>
+        </div>
+        <span class="plus" aria-hidden="true">+</span>
+        <div class="blk cs">
+          <h2>Computer <br>Science</h2>
+          <ul aria-label="Computer science skills"><li>Python</li><li>C++</li><li>Java</li><li>MATLAB</li><li>SQLite</li><li>pytest</li></ul>
+          <a class="btn cs" href="#software"><b>Software<span class="long"> projects</span></b><span class="n">3</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Work ===== -->
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <h2 class="section-title" id="work-title">Projects</h2>
+      </div>
+      <nav class="spectrum" aria-label="Jump to a group of projects">
+        <div class="spectrum-bar">
+          <a class="sp-both" href="#research">Research <span>2</span></a>
+          <a class="sp-hw" href="#hardware">Hardware <span>4</span></a>
+          <a class="sp-sw" href="#software">Software <span>3</span></a>
+        </div>
+      </nav>
+
+      <!--
+        Each project is one <article class="panel t-... side-...">.
+          t-<name>   its material colors (used when <html data-panels="material">)
+          side-hw / side-both / side-sw   its surface when <html data-panels="muted">
+        Reorder projects by moving whole <article> blocks (and the Research / Hardware / Software anchor spans with them). To add one, copy an article
+        and projects/_template.html. Tags: <li> = hardware, <li class="sw"> = software.
+      -->
+      <div class="panels">
+
+        <span class="anchor" id="research"></span>
+        <!-- 1. SAM pipeline: the lead research project -->
+        <article class="panel t-sam side-sw" aria-labelledby="p-sam">
+          <div class="panel-inner">
+            <p class="panel-kind kind-research">Research · Software</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li class="sw">Python</li><li class="sw">scipy</li><li class="sw">pandas</li><li class="sw">pytest</li>
+              </ul>
+              <h3 class="panel-title" id="p-sam">SAM Pipeline</h3>
+              <div class="fellow">
+                <p class="fellow-head">PEAK Summit Fellowship &middot; Northeastern Undergraduate Research and Fellowships</p>
+                <p class="fellow-title">&ldquo;A Reproducible Pipeline for Multi-Country Social Accounting Matrix Construction&rdquo;</p>
+                <p class="fellow-meta">Mentor: Prof. Mikhail Oet &middot; Business and Social Sciences</p>
+              </div>
+              <p class="panel-desc">A Social Accounting Matrix is one big table of every payment in a country’s economy over a year. It shows who sells to whom, who earns wages and profit, and what the government collects, and every row has to add up to the same total as its column. My Python pipeline builds these tables from global data, balances them, and checks them. They’re built to calibrate a planned research model that will simulate how sanctions and supply shocks spread.</p>
+              <dl class="specs" aria-label="Key numbers">
+                <div><dt>Countries covered</dt><dd>10</dd></div>
+                <div><dt>Accounts in each table</dt><dd>140</dd></div>
+                <div><dt>Automated tests passing</dt><dd>344</dd></div>
+              </dl>
+              <a class="panel-link" href="projects/sam-pipeline.html">Read the case study</a>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-world">
+                <div class="world" role="img" aria-label="Map of Central Asia and its neighbors Iran and Afghanistan: Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan, Turkmenistan, Afghanistan and Iran. The other three economies built so far sit just outside the frame: the United States to the west, Mongolia to the east and Sri Lanka to the south. Lines connect every pair to show trade, and a pulse spreads from Kazakhstan along its lines to every partner, the way a shock would.">
+                  <img loading="lazy" decoding="async" src="assets/sam/sam-world.svg" width="960" height="700" alt="">
+                  <svg class="world-net" viewBox="0 0 960 700" aria-hidden="true">
+                    <g class="links"><path d="M510.3 152.8Q586.6 197.7 622.7 278.6"/><path d="M510.3 152.8Q460.6 204.1 449.9 274.7"/><path d="M510.3 152.8Q566.3 232.9 565.5 330.6"/><path d="M510.3 152.8Q418.2 216.1 380 321"/><path d="M510.3 152.8Q455.9 284.6 488.1 423.6"/><path d="M510.3 152.8Q353.8 268 293.2 452.7"/><path d="M510.3 152.8Q253.2 160 48 315.2"/><path d="M510.3 152.8Q714.8 99.9 912 175.5"/><path d="M510.3 152.8Q699 370.9 726.1 658"/><path d="M622.7 278.6Q536.9 249 449.9 274.7"/><path d="M622.7 278.6Q585.8 295.4 565.5 330.6"/><path d="M622.7 278.6Q494.6 261 380 321"/><path d="M622.7 278.6Q532.2 329.6 488.1 423.6"/><path d="M622.7 278.6Q430.1 312.9 293.2 452.7"/><path d="M622.7 278.6Q329.5 204.9 48 315.2"/><path d="M622.7 278.6Q750.9 180.8 912 175.5"/><path d="M622.7 278.6Q735.1 451.8 726.1 658"/><path d="M449.9 274.7Q516.6 284.2 565.5 330.6"/><path d="M449.9 274.7Q407.5 286.7 380 321"/><path d="M449.9 274.7Q492.8 343 488.1 423.6"/><path d="M449.9 274.7Q343.1 338.6 293.2 452.7"/><path d="M449.9 274.7Q242.5 230.6 48 315.2"/><path d="M449.9 274.7Q665.1 151.2 912 175.5"/><path d="M449.9 274.7Q649.3 422.2 726.1 658"/><path d="M565.5 330.6Q474.3 296.1 380 321"/><path d="M565.5 330.6Q511.9 364.7 488.1 423.6"/><path d="M565.5 330.6Q409.8 348.1 293.2 452.7"/><path d="M565.5 330.6Q309.2 240.1 48 315.2"/><path d="M565.5 330.6Q713.9 197.6 912 175.5"/><path d="M565.5 330.6Q698.2 468.6 726.1 658"/><path d="M380 321Q450.5 355 488.1 423.6"/><path d="M380 321Q315.5 373 293.2 452.7"/><path d="M380 321Q214.9 265 48 315.2"/><path d="M380 321Q622.7 163.1 912 175.5"/><path d="M380 321Q607 434.1 726.1 658"/><path d="M488.1 423.6Q386 407 293.2 452.7"/><path d="M488.1 423.6Q285.4 299 48 315.2"/><path d="M488.1 423.6Q660.4 231.7 912 175.5"/><path d="M488.1 423.6Q644.6 502.7 726.1 658"/><path d="M293.2 452.7Q192.6 344.7 48 315.2"/><path d="M293.2 452.7Q558.2 215.1 912 175.5"/><path d="M293.2 452.7Q542.5 486.1 726.1 658"/><path d="M48 315.2Q457.6 107.1 912 175.5"/><path d="M48 315.2Q441.9 378.1 726.1 658"/><path d="M912 175.5Q741.8 387 726.1 658"/></g>
+                    <g class="hits"><path class="hit" pathLength="1" style="--t:0.43s" d="M510.3 152.8Q586.6 197.7 622.7 278.6"/><path class="hit" pathLength="1" style="--t:0.37s" d="M510.3 152.8Q460.6 204.1 449.9 274.7"/><path class="hit" pathLength="1" style="--t:0.45s" d="M510.3 152.8Q566.3 232.9 565.5 330.6"/><path class="hit" pathLength="1" style="--t:0.50s" d="M510.3 152.8Q418.2 216.1 380 321"/><path class="hit" pathLength="1" style="--t:0.60s" d="M510.3 152.8Q455.9 284.6 488.1 423.6"/><path class="hit" pathLength="1" style="--t:0.76s" d="M510.3 152.8Q353.8 268 293.2 452.7"/><path class="hit" pathLength="1" style="--t:0.95s" d="M510.3 152.8Q253.2 160 48 315.2"/><path class="hit" pathLength="1" style="--t:0.81s" d="M510.3 152.8Q714.8 99.9 912 175.5"/><path class="hit" pathLength="1" style="--t:1.05s" d="M510.3 152.8Q699 370.9 726.1 658"/></g>
+                    <circle class="burst" cx="510.3" cy="152.8" r="18"/>
+                    <g class="rings"><circle class="ring" style="--t:1.53s" cx="622.7" cy="278.6" r="16"/><circle class="ring" style="--t:1.47s" cx="449.9" cy="274.7" r="16"/><circle class="ring" style="--t:1.55s" cx="565.5" cy="330.6" r="16"/><circle class="ring" style="--t:1.60s" cx="380" cy="321" r="16"/><circle class="ring" style="--t:1.70s" cx="488.1" cy="423.6" r="16"/><circle class="ring" style="--t:1.86s" cx="293.2" cy="452.7" r="16"/><circle class="ring" style="--t:2.05s" cx="48" cy="315.2" r="16"/><circle class="ring" style="--t:1.91s" cx="912" cy="175.5" r="16"/><circle class="ring" style="--t:2.15s" cx="726.1" cy="658" r="16"/></g>
+                    <g class="nodes"><circle cx="510.3" cy="152.8" r="9" class="origin"/><circle cx="622.7" cy="278.6" r="6.5"/><circle cx="449.9" cy="274.7" r="6.5"/><circle cx="565.5" cy="330.6" r="6.5"/><circle cx="380" cy="321" r="6.5"/><circle cx="488.1" cy="423.6" r="6.5"/><circle cx="293.2" cy="452.7" r="6.5"/><circle cx="48" cy="315.2" r="6.5"/><circle cx="912" cy="175.5" r="6.5"/><circle cx="726.1" cy="658" r="6.5"/></g>
+                  </svg>
+                  <span class="wl wl-above" style="--x:53.16%;--y:21.83%">Kazakhstan</span><span class="wl wl-right" style="--x:64.86%;--y:39.80%">Kyrgyzstan</span><span class="wl wl-above" style="--x:46.86%;--y:39.24%">Uzbekistan</span><span class="wl wl-right" style="--x:58.91%;--y:47.23%">Tajikistan</span><span class="wl wl-left" style="--x:39.58%;--y:45.86%">Turkmenistan</span><span class="wl wl-below" style="--x:50.84%;--y:60.51%">Afghanistan</span><span class="wl wl-left" style="--x:30.54%;--y:64.67%">Iran</span><span class="wl wl-off-l" style="--x:5.00%;--y:45.03%">United States</span><span class="wl wl-off-r" style="--x:95.00%;--y:25.07%">Mongolia</span><span class="wl wl-off-b" style="--x:75.64%;--y:94.00%">Sri Lanka</span>
+                </div>
+                <p class="sam-key">Each line stands for a trade link between two of the 10 economies built so far. The pulse shows what linking the tables would let the model do, which is follow a shock in one country, here Kazakhstan, out to its trading partners.</p>
+              </div>
+              <figcaption>The goal is to link the country tables into one model. The map focuses on Central Asia and its neighbors Iran and Afghanistan, with Mongolia, Sri Lanka and the United States just off the edge.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 2. NASA L'SPACE: research that needs both hardware and software -->
+        <article class="panel t-nasa side-both" aria-labelledby="p-nasa">
+          <div class="panel-inner">
+            <p class="panel-kind kind-research">Research · Hardware + Software</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li>System architecture</li><li>CAD</li><li class="sw">C++ and Python plan</li><li>Team of 10</li>
+              </ul>
+              <h3 class="panel-title" id="p-nasa">NASA L’SPACE proposal</h3>
+              <p class="panel-desc">I was the principal investigator on a 10-person team that proposed smart power nodes for future Moon bases. Each node would detect a fault, isolate it, and reroute power on its own. I owned the system architecture and the CAD. The numbers here are design targets from the proposal, not test results.</p>
+              <dl class="specs" aria-label="Key numbers">
+                <div><dt>Fault isolation target</dt><dd>&lt;15 ms</dd></div>
+                <div><dt>Today’s microgrids</dt><dd>50–100 ms</dd></div>
+                <div><dt>Build plan</dt><dd>12 months, 4 phases</dd></div>
+              </dl>
+              <div class="panel-actions">
+                <a class="panel-link" href="projects/nasa-lspace.html">Read the case study</a>
+                <a class="cad-btn" href="projects/nasa-lspace.html#gallery" data-cad-open="cad-nasa">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V3l18 18z"/><path d="M7.5 16.5v-5l5 5z"/></svg>
+                  SolidWorks files <span>6</span>
+                </a>
+              </div>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-cad">
+                <img loading="lazy" decoding="async" src="assets/nasa-lspace/cad-closed-panel.webp" srcset="assets/nasa-lspace/cad-closed-panel.webp 1000w, assets/nasa-lspace/cad-closed.webp 1600w" sizes="(min-width: 861px) 38vw, 92vw" width="1600" height="1185" alt="SolidWorks concept model of the smart power node: a flanged aluminum box with a finned radiator lid, two orange-banded DC bus connectors and a priority-load connector on the front, and green, amber, and red status LEDs">
+              </div>
+              <figcaption>Concept CAD of the node, rebuilt with AI assistance after my original SolidWorks file was corrupted.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+
+        <span class="anchor" id="hardware"></span>
+        <!-- 3. Reaction game -->
+        <article class="panel t-reaction side-hw" aria-labelledby="p-reaction">
+          <div class="panel-inner">
+            <p class="panel-kind kind-hw">Hardware + Software</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li>Fabrication</li><li class="sw">Python</li><li class="sw">Raspberry Pi Pico</li><li>Team of 4</li>
+              </ul>
+              <h3 class="panel-title" id="p-reaction">Reaction-Time Game</h3>
+              <p class="panel-desc">A Chernobyl-themed carnival game where you hit each input as it lights up, faster and faster, until the reactor melts down. I wrote the game logic in Python. Using stats from 30+ user trials, I tuned the speed so an average game ran under 2 minutes and calculated prize cutoffs so the game would turn a profit. I also designed and painted the outside.</p>
+              <dl class="lamps" aria-label="Key numbers">
+                <div><dt>Timing precision</dt><dd>&lt;1 ms</dd></div>
+                <div><dt>Input accuracy</dt><dd>~98%</dd></div>
+                <div><dt>User trials</dt><dd>30+</dd></div>
+              </dl>
+              <a class="panel-link" href="projects/reaction-game.html">Read the case study</a>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-reaction">
+                <img loading="lazy" decoding="async" src="assets/reaction-game/front-panel.webp" srcset="assets/reaction-game/front-panel.webp 560w, assets/reaction-game/front.webp 828w" sizes="(min-width: 861px) 19vw, 46vw" width="828" height="954" alt="Front view of the reaction game: a yellow and black striped panel with green, red, and orange arcade buttons and two radiation-symbol discs">
+                <img loading="lazy" decoding="async" src="assets/reaction-game/angle-panel.webp" srcset="assets/reaction-game/angle-panel.webp 440w, assets/reaction-game/angle.webp 964w" sizes="(min-width: 861px) 14vw, 40vw" width="964" height="1099" alt="Three-quarter view of the reaction game showing its hazard-striped side walls and deep control surface">
+                <span class="hazard" aria-hidden="true"></span>
+              </div>
+              <figcaption>Embedded Systems Reaction-Time Game, Sep–Dec 2025</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 4. Budget Box -->
+        <article class="panel t-budget side-hw" aria-labelledby="p-budget">
+          <div class="panel-inner">
+            <p class="panel-kind kind-hw">Hardware</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li>Mechanical design</li><li>Laser cutting</li><li class="sw">Raspberry Pi Pico</li><li>Team of 4</li>
+              </ul>
+              <h3 class="panel-title" id="p-budget">Gamified Budget Box</h3>
+              <p class="panel-desc">A plywood savings box with five servo-driven doors, a keypad, and an LCD that tracks your weekly spending. On a team of four, I led the mechanical design and fabrication. I drew the dovetail joints in AutoCAD and laser-cut the mounts.</p>
+              <dl class="lcd" aria-label="Key numbers">
+                <div><dt>Box size</dt><dd>18.5 × 8 × 12 in</dd></div>
+                <div><dt>Material cost</dt><dd>$22.50</dd></div>
+                <div><dt>Prototypes</dt><dd>3</dd></div>
+              </dl>
+              <div class="panel-actions">
+                <a class="panel-link" href="projects/budget-box.html">Read the case study</a>
+                <a class="cad-btn" href="projects/budget-box.html#gallery" data-cad-open="cad-budget">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V3l18 18z"/><path d="M7.5 16.5v-5l5 5z"/></svg>
+                  AutoCAD drawings <span>2</span>
+                </a>
+              </div>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-budget">
+                <div class="dimbox" data-w="18.5 in">
+                  <img loading="lazy" decoding="async" src="assets/budget-box/front.webp" width="1020" height="544" alt="Front of the finished Gamified Budget Box: black-painted plywood with an LCD reading Left: $0.00, five buttons along the top, and five green doors on strings">
+                </div>
+              </div>
+              <figcaption>The finished box from the front, Jan–Apr 2026.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 5. e-NABLE hand -->
+        <article class="panel t-hand side-hw" aria-labelledby="p-hand">
+          <div class="panel-inner">
+            <p class="panel-kind kind-hw">Hardware</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li>CAD</li><li>3D printing</li><li>Assistive device</li>
+              </ul>
+              <h3 class="panel-title" id="p-hand">e-NABLE Prosthetic Hand</h3>
+              <p class="panel-desc">A 3D-printed hand based on the e-NABLE Phoenix v2, which I tailored in Tinkercad for one specific person. It took four design revisions before every finger moved fully.</p>
+              <dl class="specs">
+                <div><dt>Moving parts</dt><dd>15+</dd></div>
+                <div><dt>Design revisions</dt><dd class="has-revs"><span class="revs" aria-hidden="true"><i></i><i></i><i></i><i></i></span>4</dd></div>
+                <div><dt>Result</dt><dd>Full finger articulation</dd></div>
+              </dl>
+              <a class="panel-link" href="projects/enable-hand.html">Read the case study</a>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-hand">
+                <img loading="lazy" decoding="async" src="assets/enable-hand/palm-panel.webp" srcset="assets/enable-hand/palm-panel.webp 640w, assets/enable-hand/palm.webp 855w" sizes="(min-width: 861px) 22vw, 46vw" width="855" height="1400" alt="The red 3D-printed prosthetic hand seen from the back, with its padded gauntlet, black Velcro straps, and all four fingers extended">
+                <img loading="lazy" decoding="async" src="assets/enable-hand/side-panel.webp" srcset="assets/enable-hand/side-panel.webp 600w, assets/enable-hand/side.webp 790w" sizes="(min-width: 861px) 22vw, 46vw" width="790" height="1400" alt="The same prosthetic hand seen from the side, showing the printed palm, the thumb, and the wrist strap">
+              </div>
+              <figcaption>e-NABLE Phoenix v2, May–Aug 2025</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 6. Space chess -->
+        <article class="panel t-chess side-hw" aria-labelledby="p-chess">
+          <div class="panel-inner">
+            <p class="panel-kind kind-hw">Hardware</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li>CAD</li><li>SolidWorks</li><li>Assembly</li>
+              </ul>
+              <h3 class="panel-title" id="p-chess">Space Chess Set</h3>
+              <p class="panel-desc">A chess set I modeled in SolidWorks for an assembly assignment. Every piece is space-themed. The king is an orbital satellite, the bishop is a rocket, the rook is a rover, and the pawn is an astronaut helmet.</p>
+              <dl class="specs" aria-label="Key numbers">
+                <div><dt>Piece designs</dt><dd>6</dd></div>
+                <div><dt>Tallest, the king</dt><dd>212.00 mm</dd></div>
+                <div><dt>Features used</dt><dd>Revolve, loft, spline</dd></div>
+              </dl>
+              <div class="panel-actions">
+                <a class="panel-link" href="projects/space-chess.html">Read the case study</a>
+                <a class="cad-btn" href="projects/space-chess.html#gallery" data-cad-open="cad-chess">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V3l18 18z"/><path d="M7.5 16.5v-5l5 5z"/></svg>
+                  SolidWorks files <span>8</span>
+                </a>
+              </div>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-chess">
+                <img loading="lazy" decoding="async" src="assets/space-chess/board-panel.webp" srcset="assets/space-chess/board-panel.webp 1000w, assets/space-chess/board.webp 1400w" sizes="(min-width: 861px) 38vw, 92vw" width="1400" height="938" alt="SolidWorks render of the chessboard set up for play: a white set and a black set, each with astronaut-helmet pawns, rovers, rockets, launch pads, a satellite-dish queen and an orbital-satellite king">
+              </div>
+              <figcaption>Space Chess Set, SolidWorks assembly</figcaption>
+            </figure>
+          </div>
+        </article>
+
+
+        <span class="anchor" id="software"></span>
+        <!-- 7. GTAP trade stress -->
+        <article class="panel t-gtap side-sw" aria-labelledby="p-gtap">
+          <div class="panel-inner">
+            <p class="panel-kind kind-sw">Software</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li class="sw">Python</li><li class="sw">numpy</li><li class="sw">xarray</li><li class="sw">netCDF</li>
+              </ul>
+              <h3 class="panel-title" id="p-gtap">GTAP Trade Stress Model</h3>
+              <p class="panel-desc">A Python research pipeline that traced how an economic shock moves through global supply chains. It ran an input-output model, the standard way to follow a shock from one industry into the industries that depend on it, on two global databases. The case study was the 2010 rare-earths episode.</p>
+              <dl class="specs" aria-label="Key numbers">
+                <div><dt>Sectors × regions</dt><dd>65 × 141</dd></div>
+                <div><dt>Databases</dt><dd>GTAP 10, OECD ICIO</dd></div>
+                <div><dt>Figures</dt><dd>9 (21 panels)</dd></div>
+              </dl>
+              <a class="panel-link" href="projects/gtap-trade-stress.html">Read the case study</a>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-globe">
+                <div class="globe" data-globe data-label="Japan's metal ore in 2019. It came from Australia 32%, Chile 17%, Brazil 9%, Peru 7%, South Africa 5%, the USA 5% and Canada 4%, with 12% from other countries and 9% from Japan itself. Inside Japan it went to steel mills 58%, construction 25%, cement and glass 10%, and other industries 7%.">
+                  <p class="hits-title">Japan&rsquo;s metal ore: where it comes from, and where it goes</p>
+                  <div class="globe-grid">
+                    <div class="globe-left">
+                      <div class="globe-stage">
+                      <div class="globe-flat" role="img" aria-label="Japan's metal ore in 2019. It came from Australia 32%, Chile 17%, Brazil 9%, Peru 7%, South Africa 5%, the USA 5% and Canada 4%, with 12% from other countries and 9% from Japan itself. Inside Japan it went to steel mills 58%, construction 25%, cement and glass 10%, and other industries 7%.">
+                      <div class="globe-map">
+                      <img loading="lazy" decoding="async" src="assets/gtap-trade-stress/ore-azimuthal.svg" width="600" height="600" alt="">
+                      <svg class="globe-net" viewBox="0 0 600 600" aria-hidden="true"><g class="globe-in"><path d="M266.4 401.4L300 300" style="stroke-width:16.4"/><path d="M556.2 229.8L300 300" style="stroke-width:9.7"/><path d="M349 36.2L300 300" style="stroke-width:6.0"/><path d="M503.4 169.4L300 300" style="stroke-width:5.2"/><path d="M91.4 345.1L300 300" style="stroke-width:4.2"/><path d="M400 195L300 300" style="stroke-width:4.2"/><path d="M368.3 203.1L300 300" style="stroke-width:3.8"/></g><g class="globe-dots"><circle cx="266.4" cy="401.4" r="5"/><circle cx="556.2" cy="229.8" r="5"/><circle cx="349" cy="36.2" r="5"/><circle cx="503.4" cy="169.4" r="5"/><circle cx="91.4" cy="345.1" r="5"/><circle cx="400" cy="195" r="5"/><circle cx="368.3" cy="203.1" r="5"/></g><circle cx="300" cy="300" r="44" fill="#081a25"/><path fill="#ffb347" d="M300.0 258.0A42 42 0 1 1 279.8 336.8L288.4 321.0A24 24 0 1 0 300.0 276.0Z"/><path fill="#ffdcaa" d="M279.8 336.8A42 42 0 0 1 263.2 279.8L279.0 288.4A24 24 0 0 0 288.4 321.0Z"/><path fill="#e0861a" d="M263.2 279.8A42 42 0 0 1 282.1 262.0L289.8 278.3A24 24 0 0 0 279.0 288.4Z"/><path fill="#9c7a45" d="M282.1 262.0A42 42 0 0 1 300.0 258.0L300.0 276.0A24 24 0 0 0 289.8 278.3Z"/></svg>
+                      <span class="globe-ring" style="--x:40.83%;--y:40.83%">5,000 km</span><span class="globe-ring" style="--x:31.68%;--y:31.68%">10,000 km</span><span class="globe-ring" style="--x:22.51%;--y:22.51%">15,000 km</span><span class="wl wl-below" style="--x:44.40%;--y:66.90%">Australia <i>32%</i></span><span class="wl wl-left" style="--x:92.70%;--y:38.30%">Chile <i>17%</i></span><span class="wl wl-below" style="--x:58.17%;--y:6.03%">Brazil <i>9%</i></span><span class="wl wl-right" style="--x:83.90%;--y:28.23%">Peru <i>7%</i></span><span class="wl wl-below" style="--x:15.23%;--y:57.52%">South Africa <i>5%</i></span><span class="wl wl-right" style="--x:66.67%;--y:32.50%">USA <i>5%</i></span><span class="wl wl-above" style="--x:61.38%;--y:33.85%">Canada <i>4%</i></span>
+                      </div>
+                      </div>
+                      </div>
+                      <p class="globe-info" aria-live="polite"></p>
+                    </div>
+                    <div class="globe-side">
+                      <div class="globe-stats"><p><b>91%</b><span>imported</span></p><p><b>$20bn</b><span>used in 2019</span></p></div>
+                      <div class="globe-uses"><p class="globe-h">Where it goes inside Japan</p><ul><li><i style="background:#ffb347"></i><b>Steel mills</b><span class="globe-bar"><span style="width:100.0%;background:#ffb347"></span></span><em>58%</em></li><li><i style="background:#ffdcaa"></i><b>Construction</b><span class="globe-bar"><span style="width:43.1%;background:#ffdcaa"></span></span><em>25%</em></li><li><i style="background:#e0861a"></i><b>Cement and glass</b><span class="globe-bar"><span style="width:17.2%;background:#e0861a"></span></span><em>10%</em></li><li><i style="background:#9c7a45"></i><b>Other industries</b><span class="globe-bar"><span style="width:12.1%;background:#9c7a45"></span></span><em>7%</em></li></ul></div>
+                    </div>
+                  </div>
+                  <div class="globe-chips" hidden><p class="globe-h">Turn the globe to a supplier <span>or drag it</span></p><div><button type="button" aria-pressed="false">Australia <i>32%</i></button><button type="button" aria-pressed="false">Chile <i>17%</i></button><button type="button" aria-pressed="false">Brazil <i>9%</i></button><button type="button" aria-pressed="false">Peru <i>7%</i></button><button type="button" aria-pressed="false">South Africa <i>5%</i></button><button type="button" aria-pressed="false">USA <i>5%</i></button><button type="button" aria-pressed="false">Canada <i>4%</i></button><span class="globe-rest">Other countries 12%, Japan itself 9%</span></div></div>
+                </div>
+              </div>
+              <figcaption>Shares of the metal ore Japan&rsquo;s industries used in 2019, computed from the OECD Inter-Country Input-Output tables (2025 edition). The tables group all metal ores into one sector.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 8. MATLAB -->
+        <article class="panel t-matlab side-sw" aria-labelledby="p-matlab">
+          <div class="panel-inner">
+            <p class="panel-kind kind-sw">Software</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li class="sw">MATLAB</li><li class="sw">Data analysis</li><li class="sw">Risk modeling</li>
+              </ul>
+              <h3 class="panel-title" id="p-matlab">AI Compute Economics in MATLAB</h3>
+              <p class="panel-desc">A MATLAB study of NVIDIA’s stock price, which I used as a stand-in for the cost and risk of the AI chips that autonomous systems run on. I used it to argue for cost margins and schedule buffers in my NASA proposal’s early planning.</p>
+              <dl class="specs" aria-label="Key numbers">
+                <div><dt>Average closing price</dt><dd>$65.89</dd></div>
+                <div><dt>Momentum index (RSI), low / high</dt><dd>8.2 / 97.0</dd></div>
+                <div><dt>Price trend line</dt><dd>y = 0.1374x − 24.82</dd></div>
+              </dl>
+              <a class="panel-link" href="projects/matlab-economics.html">Read the case study</a>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-fig">
+                <div class="fig-body">
+                  <img decoding="async" src="assets/matlab-economics/nvda-trend-panel.webp" srcset="assets/matlab-economics/nvda-trend-panel.webp 1060w, assets/matlab-economics/nvda-trend.webp 1400w" sizes="(min-width: 861px) 38vw, 92vw" width="1400" height="965" loading="lazy" alt="MATLAB line chart of NVIDIA closing price by trading day, rising from about $10 to over $200, with a dashed linear trend line">
+                </div>
+              </div>
+              <figcaption>NVIDIA’s closing price with a fitted trend line, plotted in MATLAB.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 9. Optimized Learning -->
+        <article class="panel t-learning side-sw" aria-labelledby="p-study">
+          <div class="panel-inner">
+            <p class="panel-kind kind-sw">Software</p>
+            <div class="panel-info">
+              <ul class="tags" aria-label="Project tags">
+                <li class="sw">Full-stack</li><li class="sw">Python</li><li class="sw">SQLite</li><li class="sw">BM25</li>
+              </ul>
+              <h3 class="panel-title" id="p-study">Optimized Learning</h3>
+              <p class="panel-desc">An AI study app I’m building. It sorts each class’s materials into a database, and its tutor answers questions with citations to the actual course files.</p>
+              <dl class="specs" aria-label="Key numbers">
+                <div><dt>Database</dt><dd>17 SQLite tables</dd></div>
+                <div><dt>Course text per question</dt><dd>up to 20,000 characters</dd></div>
+                <div><dt>Automated tests</dt><dd>960+</dd></div>
+              </dl>
+              <a class="panel-link" href="projects/optimized-learning.html">Read the case study</a>
+            </div>
+            <figure class="panel-media">
+              <div class="stage stage-tree">
+                <div class="otree" role="img" aria-label="How the app organizes a class. Your workspace holds your classes, such as Statics, Thermodynamics and Physics II. Each class sorts its material into up to eight types: syllabus, notes, lectures, homework, quizzes, tests, lab and textbook. Each file is read and split into passages, with page numbers kept. A filed syllabus also becomes a digest and a list of dates you can correct. When you ask a question, the tutor ranks the passages against it, takes up to 20,000 characters, and lists the sources it was given, for example S1, week-3-notes.pdf, page 2.">
+                  <div class="ot-row"><span class="ot-tag">Workspace</span><div class="ot-body"><span class="ot-node">Your classes, saved on your own computer</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Class</span><div class="ot-body"><span class="ot-node is-on">Statics</span><span class="ot-node is-dim">Thermodynamics</span><span class="ot-node is-dim">Physics II</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Material</span><div class="ot-body ot-chips"><span>Syllabus</span><span class="is-on">Notes</span><span>Lectures</span><span>Homework</span><span>Quiz</span><span>Test</span><span>Lab</span><span>Textbook</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">File</span><div class="ot-body"><span class="ot-node is-on ot-file">week-3-notes.pdf</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Passages</span><div class="ot-body"><span class="ot-node">Read and split into passages, with page numbers kept</span></div></div>
+                  <div class="ot-row"><span class="ot-tag">Answer</span><div class="ot-body"><span class="ot-node is-on">The tutor ranks passages against your question, takes up to 20,000 characters, and lists the sources it was given <span class="ot-cite">[S1] week-3-notes.pdf, page 2</span></span></div></div>
+                </div>
+              </div>
+              <figcaption>Optimized Learning, Apr 2026–present. How the app organizes a class, from the workspace down to a cited answer. The class and file names are examples.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== CAD viewers (opened by the CAD buttons; without JS the buttons link to each gallery) ===== -->
+    <dialog class="cad" id="cad-budget" aria-labelledby="cad-budget-title">
+      <div class="cad-head">
+        <div><h2 id="cad-budget-title">Gamified Budget Box: AutoCAD drawings</h2><p>Laser-cut panel layouts</p></div>
+        <button class="cad-x" type="button" data-cad-close>Close</button>
+      </div>
+      <div class="cad-stage">
+        <figure class="cad-slide is-active"><img src="assets/budget-box/cad-panels.webp" width="1400" height="804" loading="lazy" alt="AutoCAD layout of the laser-cut panels with interlocking edges, labeled left, right, top, back, and bottom"><figcaption>Panel layout for the laser cutter: left, right, top, back, and bottom</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/budget-box/cad-dimensions.webp" width="1400" height="1011" loading="lazy" alt="AutoCAD drawing of the panel layout with overall dimensions"><figcaption>Panel layout with overall dimensions</figcaption></figure>
+      </div>
+      <div class="cad-nav"><button type="button" data-cad-prev>Previous</button><span class="cad-count">1 / 2</span><button type="button" data-cad-next>Next</button></div>
+    </dialog>
+
+    <dialog class="cad" id="cad-chess" data-tone="light" aria-labelledby="cad-chess-title">
+      <div class="cad-head">
+        <div><h2 id="cad-chess-title">Space Chess Set: SolidWorks files</h2><p>Assembly render, the set drawing, and a drawing of each piece</p></div>
+        <button class="cad-x" type="button" data-cad-close>Close</button>
+      </div>
+      <div class="cad-stage">
+        <figure class="cad-slide is-active"><img src="assets/space-chess/board.webp" width="1400" height="938" loading="lazy" alt="SolidWorks render of the full chess set assembly on its board"><figcaption>Assembly render</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the full Space Chess Set: a top view of the 801.59 mm board with all 32 pieces on their starting squares, plus front and side views, dimensioned in millimeters"><figcaption>Set drawing: top, front and side views, 1:10</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing-king.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the orbital-satellite king, with dimensioned top, front and side views of its solar-panel arms"><figcaption>Orbital Satellite King, 1:3</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing-queen.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the satellite-disk queen, with dimensioned top, front and side views of its stacked rings and dish"><figcaption>Satellite Disk Queen, 1:2</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing-bishop.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the rocket bishop, with dimensioned top, front and side views of the nose cone and fins"><figcaption>Rocket Bishop, 1:2</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing-knight.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the launch-pad knight, with dimensioned top, front and side views of the launch tower"><figcaption>Launch Pad Knight, 1:2</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing-rook.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the space-rover rook, with dimensioned top, front and side views of the rover, its wheels and antenna"><figcaption>Space Rover Rook, 1:2</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/space-chess/drawing-pawn.webp" width="1400" height="1082" loading="lazy" alt="SolidWorks drawing of the astronaut-helmet pawn, with dimensioned top, front and side views of the helmet"><figcaption>Astronaut Helmet Pawn, 1:2</figcaption></figure>
+      </div>
+      <div class="cad-nav"><button type="button" data-cad-prev>Previous</button><span class="cad-count">1 / 8</span><button type="button" data-cad-next>Next</button></div>
+    </dialog>
+
+    <dialog class="cad" id="cad-nasa" data-tone="light" aria-labelledby="cad-nasa-title">
+      <div class="cad-head">
+        <div><h2 id="cad-nasa-title">NASA L’SPACE smart node: SolidWorks files</h2><p>Concept model, rebuilt with AI assistance after the original file was corrupted; dimensions are illustrative</p></div>
+        <button class="cad-x" type="button" data-cad-close>Close</button>
+      </div>
+      <div class="cad-stage">
+        <figure class="cad-slide is-active"><img src="assets/nasa-lspace/cad-closed.webp" width="1600" height="1185" loading="lazy" alt="SolidWorks concept model of the smart power node with the lid on, from the front: a flanged aluminum box with a finned radiator lid, three orange-banded front connectors, and green, amber, and red status LEDs"><figcaption>Lid on, from the front</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/nasa-lspace/cad-closed-back.webp" width="1600" height="1202" loading="lazy" alt="Concept model with the lid on, from the back: the finned lid, a telemetry port, and two CAN connectors on the back wall"><figcaption>Lid on, from the back: the telemetry port and the two CAN connectors</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/nasa-lspace/cad-front.webp" width="1600" height="606" loading="lazy" alt="Straight-on front view of the concept model: DC bus A and B and the priority-load connector, each with an orange high-voltage band, beside green, amber, and red status LEDs"><figcaption>Front view: DC bus A and B, the priority-load output, and the status LEDs</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/nasa-lspace/cad-open-front.webp" width="1600" height="1130" loading="lazy" alt="Concept model with the lid off, seen from the front: the three front connectors, the tall copper heat bar behind them, inductors, capacitors, and the controller board on brass standoffs"><figcaption>Lid off, from the front: the copper bar carries heat up to the lid</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/nasa-lspace/cad-open-back.webp" width="1600" height="1138" loading="lazy" alt="Concept model with the lid off, seen from the back: four black silicon-carbide switches clamped to a copper bar, two copper toroid inductors, yellow film capacitors, a row of blue bus capacitors, the navy controller board, and two CAN connectors and a telemetry port on the back wall"><figcaption>Lid off, from the back: switches on the copper bar, converters, and the controller board</figcaption></figure>
+        <figure class="cad-slide"><img src="assets/nasa-lspace/cad-top.webp" width="1600" height="1231" loading="lazy" alt="Top view of the concept model with the lid off, showing the board layout from the front connectors and current sensors to the controller board and back-wall connectors"><figcaption>Top view of the layout, lid off</figcaption></figure>
+      </div>
+      <div class="cad-nav"><button type="button" data-cad-prev>Previous</button><span class="cad-count">1 / 6</span><button type="button" data-cad-next>Next</button></div>
+    </dialog>
+
+    <!-- ===== About ===== -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-inner">
+        <div class="about-text">
+          <h2 class="section-title" id="about-title">About</h2>
+          <p>I'm <strong>Benny Lee</strong>, a second-year <strong>Mechanical Engineering</strong> student at Northeastern University. I graduate with my BSME in May 2029.</p>
+          <p>Most of my projects live where a machine and its code have to work together, like a box with servo-driven doors or a game that times button presses to under a millisecond. That’s why I study both sides. Outside of class I’m an undergraduate researcher and PEAK Summit Fellow in Northeastern’s Financial Stress Lab, and every week I teach hands-on STEM workshops to K–8 students with STEMout.</p>
+          <p>Away from engineering, I’m a two-time national Taekwondo sparring champion and a three-time New York All-State track athlete. I speak Korean, play piano and guitar, and bring a camera whenever I travel or go snowboarding.</p>
+          <p class="about-seeking">I'm looking for a spring 2027 co-op in mechanical engineering or computer science.</p>
+        </div>
+        <figure class="about-photo">
+          <img src="assets/headshot.webp" width="628" height="785" alt="Headshot of Benny Lee in a dark suit, white shirt, and tie" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Skills: hardware | embedded systems and data | software ===== -->
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <div class="skills-title"><h2 class="section-title" id="skills-title">Skills and tools</h2></div>
+      <div class="skill-cols">
+        <div class="skill-col skill-hw">
+          <h3>Hardware</h3>
+          <ul>
+            <li>Siemens NX, SolidWorks, and AutoCAD</li>
+            <li>Tinkercad for quick parts and assemblies</li>
+            <li>Digital assemblies to check fit and motion</li>
+            <li>Laser cutting parts and mounts</li>
+            <li>3D printing and iterating on prints</li>
+            <li>Laser-cut plywood with dovetail joints</li>
+          </ul>
+        </div>
+        <div class="skill-col skill-mid">
+          <h3>Embedded systems and data</h3>
+          <ul>
+            <li>Raspberry Pi Pico firmware in Python</li>
+            <li>Servo mounts, plus buttons, LEDs, and buzzers driven from Python</li>
+            <li>Real-time input and timing logic</li>
+            <li>Two-layer fault-protection architecture</li>
+            <li>MATLAB data analysis</li>
+          </ul>
+        </div>
+        <div class="skill-col skill-sw">
+          <h3>Software</h3>
+          <ul>
+            <li>Python, Java, C++, and MATLAB</li>
+            <li>numpy, scipy, pandas, xarray, matplotlib</li>
+            <li>SQLite and BM25 retrieval</li>
+            <li>pytest and large automated test suites</li>
+            <li>Numerical optimization and data pipelines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div class="contact-text">
+          <h2 class="contact-title" id="contact-title">Contact</h2>
+          <p>I’m happy to walk you through any of these projects. Email is the fastest way to reach me.</p>
+        </div>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <a href="mailto:lee.benny@northeastern.edu">
+              <span class="contact-lbl">Email</span>
+              <span class="contact-val">lee.benny@northeastern.edu</span>
+            </a>
+            <button class="copy-btn" type="button" data-copy="lee.benny@northeastern.edu">Copy</button>
+          </li>
+          <li class="contact-item">
+            <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">
+              <span class="contact-lbl">LinkedIn</span>
+              <span class="contact-val">linkedin.com/in/bennylee-</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a href="assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">
+              <span class="contact-lbl">Résumé</span>
+              <span class="contact-val">Benny-Lee-Resume.pdf</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="#research">Research</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#software">Software</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>

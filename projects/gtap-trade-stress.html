@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-panels="material">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GTAP Trade Stress Model | Benny Lee</title>
+  <meta name="description" content="A Python research pipeline for measuring how an economic shock travels through global supply chains, with a case study of the 2010 rare-earths episode.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GTAP Trade Stress Model | Benny Lee">
+  <meta property="og:description" content="A Python research pipeline for measuring how an economic shock travels through global supply chains, with a case study of the 2010 rare-earths episode.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f3ee">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="nav-name" href="../index.html">Benny Lee</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#hardware">Hardware</a>
+      <a href="../index.html#software">Software</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-resume" href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero t-gtap side-sw">
+      <div class="cs-hero-inner">
+        <a class="cs-back" href="../index.html#work">Back to all work</a>
+        <h1 class="cs-title">GTAP Trade Stress Model</h1>
+        <p class="cs-lede">A Python research pipeline for measuring how an economic shock spreads through global supply chains. It ran an input-output model, the math for how industries buy from each other, on two global databases.</p>
+        <dl class="cs-facts">
+          <div><dt>Role</dt><dd>Undergraduate researcher</dd></div>
+          <div><dt>Lab</dt><dd>Financial Stress Lab, Northeastern</dd></div>
+          <div><dt>Dates</dt><dd>Phase 1, Jan–Jun 2026; model fix, Oct 2026</dd></div>
+          <div><dt>Tools</dt><dd>Python, numpy, xarray, netCDF, pandas, pytest</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="cs-stage-wrap t-gtap side-sw">
+      <figure class="panel-media">
+        <div class="stage stage-hits">
+                <div class="hits" role="img" aria-label="Bar chart: the same one-unit cut to metal-ore supply, run through each economy's supply-side input-output model for 2019, and how hard it hits each one, with the hardest hit at 1.0. China 1.00, South Korea 0.82, Japan 0.81, India 0.78, UK 0.69, France 0.65, Germany 0.65, USA 0.52, Brazil 0.38, Australia 0.36. Japan and China, the pair the case study compares, are highlighted.">
+                  <p class="hits-title">One metal-ore supply cut. How hard does it hit each economy?</p>
+                  <p class="hits-sub">Stress from my supply-side model, 2019. Hardest hit = 1.0</p>
+                  <ol class="hits-bars" aria-hidden="true"><li class="is-key" style="--v:1.000"><span class="hb-name">China</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">1.00</span></li><li style="--v:0.822"><span class="hb-name">South Korea</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.82</span></li><li class="is-key" style="--v:0.810"><span class="hb-name">Japan</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.81</span></li><li style="--v:0.782"><span class="hb-name">India</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.78</span></li><li style="--v:0.691"><span class="hb-name">UK</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.69</span></li><li style="--v:0.647"><span class="hb-name">France</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.65</span></li><li style="--v:0.645"><span class="hb-name">Germany</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.65</span></li><li style="--v:0.520"><span class="hb-name">USA</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.52</span></li><li style="--v:0.375"><span class="hb-name">Brazil</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.38</span></li><li style="--v:0.358"><span class="hb-name">Australia</span><span class="hb-track"><span class="hb-bar"></span></span><span class="hb-val">0.36</span></li></ol>
+                  <p class="hits-key" aria-hidden="true"><i></i>Japan and China, the pair my case study compares</p>
+                </div>
+              </div>
+              <figcaption>The same one-unit cut to metal-ore supply, mined at home or imported, run through each economy&rsquo;s own supply chain. Data: OECD Inter-Country Input-Output tables, 2025 edition.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cs-body">
+      <section class="cs-section">
+        <h2>Summary</h2>
+        <div>
+          <p>The model asked how a cut to one sector&rsquo;s supply spreads to the industries that buy from it, and how exposed different economies are to the same cut. It ran on <strong>GTAP 10</strong> and <strong>OECD ICIO</strong> input-output data. It included a case study of the 2010 rare-earths episode.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Problem</h2>
+        <div>
+          <p>A supply cut in one place can ripple out through global supply chains. I needed to measure that ripple for any region, sector, and year, and to compare how exposed different economies were, for example Japan and China.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Design</h2>
+        <div>
+          <ul>
+            <li><strong>Two databases.</strong> GTAP 10 has 65 sectors and 141 regions, in snapshot years 2004 to 2014. OECD ICIO 2025 has 50 sectors and 81 economies, with annual tables for 2016 to 2022.</li>
+            <li><strong>Data engineering.</strong> I parsed GEMPACK HAR binaries, using the HARPY reader, and zipped ICIO CSVs. Both became domestic and imported intermediate flows and bilateral exports, which I stored as netCDF with xarray. The Armington substitution elasticities, which say how readily buyers swap an import for a domestic good, came from the GTAP parameter file.</li>
+            <li><strong>Stress metrics.</strong> The core is a trade-exposure tensor of 65 sectors by 141 exporters by 141 partners. On top of it sit partner-dependency weights and a Herfindahl-Hirschman index, which measures how concentrated a country’s imports are. Sector stress rolls up into system stress in two stages, and a final metric compares how vulnerable Japan and China are.</li>
+          </ul>
+          <p>Once the GTAP pipeline was built, I wrote one new extractor and pointed the same downstream code at ICIO.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="math">The math</h2>
+        <div>
+          <p>Six formulas do the work in this project. For each one, here&rsquo;s what it says in plain words and why I used it. The first, the Leontief matrix, is introduced on my <a href="sam-pipeline.html#math">SAM pipeline</a> page.</p>
+          <div class="cs-math">
+            <div class="cs-eq">
+              <h3>1. The Leontief model, used in phase 1</h3>
+              <div class="cs-eq-math"><math alttext="A sub i j equals Z sub i j over x sub j"><mrow><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><msub><mi>Z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>x</mi><mi>j</mi></msub></mfrac></mrow></math><math alttext="L equals the inverse of I minus A"><mrow><mi>L</mi><mo>=</mo><msup><mrow><mo>(</mo><mi>I</mi><mo>−</mo><mi>A</mi><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math><math alttext="delta x equals L times delta f"><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><mi>L</mi><mi mathvariant="normal">Δ</mi><mi>f</mi></mrow></math></div>
+              <p class="cs-eq-where">Z<sub>ij</sub> is what industry j buys from industry i, x<sub>j</sub> is industry j&rsquo;s output, and f is final demand (households, government and exports).</p>
+              <p><strong>In plain words.</strong> A is the Leontief matrix explained on my SAM pipeline page. It says how many cents of each input an industry needs for every dollar it makes. Here I ran L on it, adding up every round of buying, so &Delta;x is the total change that follows a change in demand.</p>
+              <p><strong>Why I used it.</strong> It&rsquo;s the standard way to trace a change in one industry through a whole economy, and it runs directly on the input-output tables I had. In phase 1, x came from intermediate flows only, so A&rsquo;s columns summed to about 1 and I added a tiny term (10<sup>&minus;6</sup>) to invert it. That term later turned out to decide the results (see Testing).</p>
+            </div>
+            <div class="cs-eq">
+              <h3>2. The supply-side (Ghosh) model, used in the fix</h3>
+              <div class="cs-eq-math"><math alttext="B sub i j equals Z sub i j over s sub i, where s sub i equals x sub i plus m sub i"><mrow><msub><mi>B</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><msub><mi>Z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>s</mi><mi>i</mi></msub></mfrac><mo>,</mo><mspace width="0.6em"/><msub><mi>s</mi><mi>i</mi></msub><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msub><mi>m</mi><mi>i</mi></msub></mrow></math><math alttext="G equals the inverse of I minus B"><mrow><mi>G</mi><mo>=</mo><msup><mrow><mo>(</mo><mi>I</mi><mo>−</mo><mi>B</mi><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math><math alttext="delta s transpose equals delta v transpose times G"><mrow><msup><mrow><mi mathvariant="normal">Δ</mi><mi>s</mi></mrow><mi>⊤</mi></msup><mo>=</mo><msup><mrow><mi mathvariant="normal">Δ</mi><mi>v</mi></mrow><mi>⊤</mi></msup><mi>G</mi></mrow></math></div>
+              <p class="cs-eq-where">s<sub>i</sub> is the supply of product i, made at home (x<sub>i</sub>) or imported (m<sub>i</sub>), and &Delta;v is the cut, here one unit of metal ore.</p>
+              <p><strong>In plain words.</strong> B says where each dollar of a product&rsquo;s supply goes. G follows a lost dollar forward, to the industries that buy it, then to their buyers, and so on.</p>
+              <p><strong>Why I used it.</strong> A supply cut hits the industries that buy the cut product, so the model has to push the shock forward. Counting imports in s also lets it see economies like Germany that import all their ore. This is the October fix, written with Claude Code, and it inverts with no correction term.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>3. The stress score</h3>
+              <div class="cs-eq-math"><math alttext="S sub c equals one over n times the sum over j of the absolute value of delta s sub j" displaystyle="true"><mrow><msub><mi>S</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mrow><mo fence="true" stretchy="false" rspace="0">|</mo><mi mathvariant="normal">Δ</mi><msub><mi>s</mi><mi>j</mi></msub><mo fence="true" stretchy="false" lspace="0">|</mo></mrow></math><math alttext="scaled stress equals S sub c over the largest S" displaystyle="true"><mrow><msub><mover><mi>S</mi><mo>^</mo></mover><mi>c</mi></msub><mo>=</mo><mfrac><msub><mi>S</mi><mi>c</mi></msub><mrow><msub><mi>max</mi><mi>k</mi></msub><msub><mi>S</mi><mi>k</mi></msub></mrow></mfrac></mrow></math></div>
+              <p class="cs-eq-where">n is the 50 industries in the OECD tables, and c is one economy.</p>
+              <p><strong>In plain words.</strong> The average size of the hit across all 50 industries, scaled so the hardest-hit economy reads 1.0.</p>
+              <p><strong>Why I used it.</strong> One number per economy lets me compare the same cut across economies of very different sizes. It&rsquo;s a ranking, not a forecast in dollars.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>4. The Coercibility Index</h3>
+              <div class="cs-eq-math"><math alttext="C sub c t equals S sub c t times one plus theta sub c t"><mrow><msub><mi>C</mi><mrow><mi>c</mi><mo>,</mo><mi>t</mi></mrow></msub><mo>=</mo><msub><mi>S</mi><mrow><mi>c</mi><mo>,</mo><mi>t</mi></mrow></msub><mrow><mo>(</mo><mn>1</mn><mo>+</mo><msub><mi>θ</mi><mrow><mi>c</mi><mo>,</mo><mi>t</mi></mrow></msub><mo>)</mo></mrow></mrow></math><math alttext="index equals C sub c t over C sub c 2016"><mrow><mi>index</mi><mo>=</mo><mfrac><msub><mi>C</mi><mrow><mi>c</mi><mo>,</mo><mi>t</mi></mrow></msub><msub><mi>C</mi><mrow><mi>c</mi><mo>,</mo><mn>2016</mn></mrow></msub></mfrac></mrow></math></div>
+              <p class="cs-eq-where">&theta; is the share of an economy&rsquo;s inputs that it buys from abroad, and t is the year.</p>
+              <p><strong>In plain words.</strong> Stress, boosted by how much an economy relies on imports, and tracked against its own 2016 level.</p>
+              <p><strong>Why I used it.</strong> Stress says how hard a cut hits, but not whether another country could use it as leverage. An economy that&rsquo;s hit hard and relies on imports is easier to pressure than one that absorbs the cut at home.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>5. Import concentration (Herfindahl-Hirschman index)</h3>
+              <div class="cs-eq-math"><math alttext="H equals the sum over k of w sub k squared" displaystyle="true"><mrow><mi>H</mi><mo>=</mo><mrow><munder><mo>∑</mo><mi>k</mi></munder></mrow><msubsup><mi>w</mi><mi>k</mi><mn>2</mn></msubsup></mrow></math><math alttext="w sub k equals X sub k over the sum of X"><mrow><msub><mi>w</mi><mi>k</mi></msub><mo>=</mo><mfrac><msub><mi>X</mi><mi>k</mi></msub><mrow><mrow><munder><mo>∑</mo><mi>l</mi></munder></mrow><msub><mi>X</mi><mi>l</mi></msub></mrow></mfrac></mrow></math></div>
+              <p class="cs-eq-where">X<sub>k</sub> is what an economy imports of one product from partner k.</p>
+              <p><strong>In plain words.</strong> Square each supplier&rsquo;s share of the imports and add them up. One supplier gives 1, and ten equal suppliers give 0.1.</p>
+              <p><strong>Why I used it.</strong> Relying on one supplier is riskier than spreading purchases out, and this puts that risk in one number per sector. It&rsquo;s the same measure regulators use to judge how concentrated a market is. I computed it from the trade-exposure tensor.</p>
+            </div>
+            <div class="cs-eq">
+              <h3>6. Armington elasticities</h3>
+              <div class="cs-eq-math"><math alttext="delta log of M a over M b equals minus sigma times delta log of p a over p b"><mrow><mi mathvariant="normal">Δ</mi><mspace width="0.1em"/><mi>ln</mi><mrow><mo>(</mo><mfrac><msub><mi>M</mi><mi>a</mi></msub><msub><mi>M</mi><mi>b</mi></msub></mfrac><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mi>σ</mi><mi mathvariant="normal">Δ</mi><mspace width="0.1em"/><mi>ln</mi><mrow><mo>(</mo><mfrac><msub><mi>p</mi><mi>a</mi></msub><msub><mi>p</mi><mi>b</mi></msub></mfrac><mo>)</mo></mrow></mrow></math><math alttext="sigma D equals one half sigma M"><mrow><msub><mi>σ</mi><mi>D</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>σ</mi><mi>M</mi></msub></mrow></math></div>
+              <p class="cs-eq-where">M is what a buyer purchases from supplier a or b, p is each supplier&rsquo;s price, &sigma;<sub>M</sub> (GTAP&rsquo;s ESUBM) is switching between import sources, and &sigma;<sub>D</sub> (ESUBD) is switching between imports and home-made goods.</p>
+              <p><strong>In plain words.</strong> How strongly buyers move away from a supplier that gets more expensive. With &sigma;&nbsp;=&nbsp;2, a 1% price rise for one supplier cuts what buyers take from it, compared with the other, by about 2%.</p>
+              <p><strong>Why I used it.</strong> It measures how easily a country could replace a lost supplier, which matters as much as the cut itself. I extracted both elasticities for all 65 GTAP sectors and checked that &sigma;<sub>D</sub> is half of &sigma;<sub>M</sub>, as GTAP sets it. The stress numbers don&rsquo;t use them yet. Adding substitution is the next step.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Build</h2>
+        <div>
+          <p><strong>The case study was the 2010 rare-earths episode.</strong> I modeled it as a one-unit supply cut to GTAP’s oxt mining sector for 2011, and to OECD’s metal-ore sector B07 for 2019 and across the 2016 to 2022 series. Neither sector isolates rare earths, so both were proxies.</p>
+          <p>The pipeline produced a labeled multi-year dataset, technical-coefficient matrices and Leontief inverses for each region, and the shock-response and vulnerability metrics. It also came with a glossary and a guide to all nine figures (21 panels).</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Testing and iteration</h2>
+        <div>
+          <p>pytest tests covered how the dataset was built, the extraction checks, and parameter parsing. One extraction check, for example, made sure imports at world prices never exceeded imports at market prices.</p>
+          <ul>
+            <li><strong>A zero that turned out to be a model limit.</strong> Germany and the UK showed zero stress under the metal-ore shock. When I traced it, their ICIO tables carried zero metal-ore output, because they mine almost no metal ore of their own. My model only cut a country&rsquo;s own ore mining, so for them it had nothing to cut. They still depend on ore. In 2019 Germany used $7.9bn of it and the UK $1.5bn, all of it imported, and my model couldn&rsquo;t see that.</li>
+            <li><strong>A ranking that didn&rsquo;t depend on the shock.</strong> In October 2026 I went back over the model with Claude Code, an AI coding tool, and the review found two bigger problems. The shock ran backward, through the industries the ore mines buy from, when a supply cut really hits the industries that buy the ore. And the small correction term the Leontief inverse needed was big enough to decide the answer. Cutting food, IT or health care gave the same country ranking as cutting metal ore.</li>
+            <li><strong>The fix.</strong> Claude Code wrote a supply-side (Ghosh) version of the model on the full OECD tables. It uses real output, counts imported ore as part of supply, and needs no correction term. The math is now well behaved (condition numbers of about 3 to 6, against up to about 59,000 before), different cuts give different rankings, and Germany and the UK get real scores. My figures and my Coercibility Index were re-run with it, and new tests check all of this.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>Results</h2>
+        <div>
+          <ul>
+            <li>Shock-response and vulnerability metrics for any region, sector, and year</li>
+            <li>One shared pipeline across two global databases</li>
+            <li>Nine documented figures (21 panels)</li>
+          </ul>
+          <p><strong>Then I built a Coercibility Index.</strong> A single stress score says how hard a shock hits, but not why a country is vulnerable or whether that vulnerability could be used as leverage. My index starts from the same one-unit cut to metal-ore supply, runs it through each economy&rsquo;s supply chain, and weights the result by how much of that economy&rsquo;s inputs are imported. Each economy is scaled to its own 2016 value, so a line shows change over time, not size.</p>
+          <figure class="cs-fig"><a href="../assets/gtap-trade-stress/coercibility-index.webp"><img src="../assets/gtap-trade-stress/coercibility-index.webp" width="1800" height="960" loading="lazy" alt="Line chart of the Coercibility Index from 2016 to 2022, with each economy at 1.0 in 2016. Brazil ends highest at 1.509, after a jump in 2022, and Germany at 1.201, while Australia ends at 0.884 after a dip to 0.743 in 2021. Japan, China, the USA, South Korea, India, the UK and France are shown in grey, mostly ending a little above 1.0."></a><figcaption>From 2016 to 2022, Brazil rose the most (+0.509), most of it in 2022, and Germany came next (+0.201). Australia fell the most (&minus;0.116), after a dip in 2021. Eight of the ten economies ended above their 2016 level.<span class="credit">Data: OECD Inter-Country Input-Output tables, 2025 edition.</span></figcaption></figure>
+          <details class="cs-more">
+            <summary>More detail: how the index is built</summary>
+            <p>The base stress is the mean absolute change across all sectors when the supply of metal ores (OECD sector B07) drops by one unit, worked out through the supply-side model. Coercibility is that stress times one plus the economy&rsquo;s import share, the part of its inputs bought from abroad. An economy that is both hit and import-dependent comes out more coercible than one that absorbs the same shock at home.</p>
+            <p>I also split the result into two parts. Import dependence is how much of the ore supply each sector buys directly. Network amplification is how much the supply chain multiplies the shock beyond that first round. The supply-side model assumes buyers keep their usual shares, so the index is best read as a direction of change and a ranking, not a forecast.</p>
+          </details>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2>What I’d change</h2>
+        <div>
+          <p><strong>Known limits.</strong> In phase 1, output was approximated from intermediate flows only, so the columns of the coefficient matrix summed to about 1. That was true for 65 of 65 sectors in GTAP and 49 of 50 in the OECD Japan tables. The Leontief inverse needed a small regularization term, and it turned out to decide the results (see Testing). The October fix covers the OECD runs. The GTAP runs still use the old method and need the same fix. The supply-side model ranks exposure rather than forecasting it, because it assumes buyers keep their usual shares. The OECD Armington elasticities were only placeholder defaults.</p>
+          <p>These limits shaped my next project. The <a href="sam-pipeline.html">SAM pipeline</a> starts from full tables that include value added and final demand, and it adds structural validation.</p>
+        </div>
+      </section>
+      <section class="cs-section">
+        <h2 id="gallery">Gallery</h2>
+        <div>
+          <div class="cs-gallery one-col">
+            <figure><a href="../assets/gtap-trade-stress/oecd-shock-2019.webp"><img src="../assets/gtap-trade-stress/oecd-shock-2019.webp" width="1800" height="1271" loading="lazy" alt="Three-panel chart from the supply-side model for 2019. Top: system stress by economy under a one-unit cut to metal-ore supply, led by China, South Korea, Japan and India, with Brazil and Australia lowest. Bottom: the ten most affected sectors in Japan, led by iron and steel and then construction, and in China, led by iron and steel and non-ferrous metals."></a><figcaption>My shock-propagation figure for 2019, from the supply-side model. In both Japan and China, steel takes the biggest hit. The sector panels leave out the cut itself.<span class="credit">Data: OECD Inter-Country Input-Output tables, 2025 edition.</span></figcaption></figure>
+            <figure><a href="../assets/gtap-trade-stress/oecd-multiyear.webp"><img src="../assets/gtap-trade-stress/oecd-multiyear.webp" width="1800" height="1157" loading="lazy" alt="Two-panel chart of stress from 2016 to 2022. Left: system stress for Japan, China, the USA, Germany and South Korea, with China highest every year and Germany rising sharply in 2022. Right: Japan's key sectors over time, with iron and steel on top every year and construction falling from about half of steel's level to about a third."></a><figcaption>Stress from 2016 to 2022, from the supply-side model. Germany&rsquo;s stress rose sharply in 2022, and inside Japan, construction&rsquo;s share of the hit shrank over the period.<span class="credit">Data: OECD Inter-Country Input-Output tables, 2025 edition.</span></figcaption></figure>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="cs-next" aria-label="More projects">
+      <a href="space-chess.html"><span>Previous project</span><strong>Space Chess Set</strong></a>
+      <a href="matlab-economics.html"><span>Next project</span><strong>AI Compute Economics in MATLAB</strong></a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p>Benny Lee, Mechanical Engineering, Northeastern University</p>
+    <nav aria-label="Footer">
+      <a href="mailto:lee.benny@northeastern.edu">lee.benny@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/bennylee-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../assets/Benny-Lee-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+  </footer>
+</body>
+</html>
