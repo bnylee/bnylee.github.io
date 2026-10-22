@@ -7,34 +7,35 @@
    ========================================================================== */
 
 :root {
-  /* ===== Color scheme "Paper" (Venn): change these to re-color the whole site ===== */
-  --me: #2f62ff;               /* Mechanical Engineering: lines and shapes */
-  --me-ink: #1f4ad8;           /* ...as text or a fill on light grounds */
-  --me-tint: #e5e7ef;          /* ...as a light background (8% blue on paper) */
-  --cs: #f0502d;               /* Computer Science: lines and shapes */
-  --cs-ink: #a52f0d;           /* ...as text or a fill on light grounds */
-  --cs-tint: #f5e6df;          /* ...as a light background (8% coral on paper) */
-  --cs-on-dark: #ff8a6b;
-  --both-tint: #dcd0d1;        /* where the two tints overlap */
-  --both-muted: #45484e;       /* muted text on --both-tint */
+  /* ===== Color scheme "Night" (2026-10-22, replacing "Paper"): change these to re-color the whole site ===== */
+  color-scheme: dark;
+  --me: #5b82ff;               /* Mechanical Engineering: lines and shapes */
+  --me-ink: #9cb3ff;           /* ...as text, or a fill with dark text on it */
+  --me-tint: #171d2e;          /* ...as a background (blue on night) */
+  --cs: #ff6a45;               /* Computer Science: lines and shapes */
+  --cs-ink: #ff9a7d;           /* ...as text, or a fill with dark text on it */
+  --cs-tint: #2a1b17;          /* ...as a background (coral on night) */
+  --cs-on-dark: #ff9a7d;
+  --both-tint: #231d26;        /* where the two tints overlap */
+  --both-muted: #b9b5bd;       /* muted text on --both-tint */
 
-  --hw-bg: #f5f3ee;            /* light surface: warm paper */
-  --hw-bg-2: #ebe7de;
-  --hw-line: rgba(21, 23, 27, 0.07);
-  --hw-ink: #15171b;
-  --hw-muted: #555960;
-  --sw-bg: #15171b;            /* dark surface */
-  --sw-bg-2: #1f2228;
+  --hw-bg: #101216;            /* main surface: night */
+  --hw-bg-2: #171a20;
+  --hw-line: rgba(255, 255, 255, 0.07);
+  --hw-ink: #eef0f3;
+  --hw-muted: #a8adb5;
+  --sw-bg: #08090b;            /* darker surface: Contact and the footer */
+  --sw-bg-2: #121419;
   --sw-line: rgba(242, 240, 234, 0.07);
-  --sw-ink: #f2f0ea;
-  --sw-muted: #a4a8af;
-  --accent: #8ea8ff;           /* general accent (mechanical blue) on dark grounds */
-  --accent-ink: #1f4ad8;       /* ...on light grounds */
-  --accent-fill: #1f4ad8;      /* ...as a background */
-  --on-accent: #ffffff;        /* text on --accent-fill */
-  --page: #f5f3ee;
-  --rule: #e0dbd1;             /* hairlines on light */
-  --sw-rule: rgba(242, 240, 234, 0.16);   /* hairlines on dark */
+  --sw-ink: #eef0f3;
+  --sw-muted: #a8adb5;
+  --accent: #9cb3ff;           /* general accent (mechanical blue) on the darker surface */
+  --accent-ink: #9cb3ff;       /* ...on the main surface */
+  --accent-fill: #9cb3ff;      /* ...as a background */
+  --on-accent: #101216;        /* text on --accent-fill */
+  --page: #101216;
+  --rule: #262a31;             /* hairlines on the main surface */
+  --sw-rule: rgba(242, 240, 234, 0.16);   /* hairlines on the darker surface */
 
   /* Type */
   --font: 'Times New Roman', Tinos, Times, serif;
@@ -159,11 +160,11 @@ button { font: inherit; cursor: pointer; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: clamp(28px, 4.5svh, 52px);
   background: var(--page); color: var(--hw-ink);
-  font-family: var(--hero-font);                           /* the front screen keeps Archivo; the rest of the site is Times */
+  font-family: var(--hero-font);                           /* the circles keep Archivo; the name and the rest of the site are Times */
 }
 .hero h1 {
-  margin: 0; font-size: clamp(3rem, min(9cqi, 12.5svh), 9rem);
-  font-weight: 900; font-stretch: 125%; letter-spacing: -0.028em; line-height: 0.86; white-space: nowrap;
+  margin: 0; font-size: clamp(4.05rem, min(12.15cqi, 16.875svh), 12.15rem);   /* 1.35x the old Archivo size, since Times is narrower */
+  font-family: var(--font); font-weight: 700; letter-spacing: -0.015em; line-height: 0.86; white-space: nowrap;
   text-box: trim-both cap alphabetic;                    /* the box hugs the letters, so spacing is measured from the type */
 }
 .venn {
@@ -171,9 +172,9 @@ button { font: inherit; cursor: pointer; }
   --fs: clamp(0.875rem, calc(var(--d) * 0.029), 1.0625rem);            /* skill size; both lists share one row height */
   position: relative; width: calc(var(--d) * 1.62); height: var(--d); flex: none;
 }
-.venn .c { position: absolute; top: 0; width: var(--d); height: var(--d); border-radius: 50%; mix-blend-mode: multiply; }
-.venn .c.me { left: 0; border: 1.5px solid var(--me); background: rgba(47, 98, 255, 0.08); }
-.venn .c.cs { right: 0; border: 1.5px solid var(--cs); background: rgba(240, 80, 45, 0.08); }
+.venn .c { position: absolute; top: 0; width: var(--d); height: var(--d); border-radius: 50%; mix-blend-mode: screen; }
+.venn .c.me { left: 0; border: 1.5px solid var(--me); background: color-mix(in srgb, var(--me) 14%, transparent); }
+.venn .c.cs { right: 0; border: 1.5px solid var(--cs); background: color-mix(in srgb, var(--cs) 14%, transparent); }
 .venn .blk { position: absolute; top: 50%; transform: translateY(-50%); width: calc(var(--d) * 0.44); container-type: inline-size; }
 .venn .blk.me { left: calc(var(--d) * 0.16); }
 .venn .blk.cs { right: calc(var(--d) * 0.16); text-align: right; }   /* mirror image of the mechanical side */
@@ -191,7 +192,7 @@ button { font: inherit; cursor: pointer; }
 }
 .venn .btn {
   margin-top: 20px; width: 100%; min-height: 44px; padding: 0 14px;
-  justify-content: space-between; gap: 18px; font-size: 0.875rem; color: #fff;
+  justify-content: space-between; gap: 18px; font-size: 0.875rem; color: var(--on-accent);
 }
 .venn .btn b { font-weight: inherit; white-space: nowrap; }
 .venn .btn .n { font-family: var(--mono); font-weight: 500; font-size: 0.8125rem; opacity: 0.8; }
@@ -204,7 +205,7 @@ button { font: inherit; cursor: pointer; }
 /* Phones: the circles stack, mechanical on top, and the skills go two-up */
 @media (max-width: 760px) {
   .hero { min-height: 0; padding-top: calc(var(--nav-h) + 36px); }
-  .hero h1 { font-size: calc((100cqi - 2 * var(--gutter)) / 6.75); }
+  .hero h1 { font-size: calc((100cqi - 2 * var(--gutter)) / 5); }
   .venn { --d: min(100cqi, 360px); width: var(--d); height: calc(var(--d) * 1.72); }
   .venn .blk.cs { text-align: left; }
   .venn .blk.cs .btn { flex-direction: row; }
@@ -842,8 +843,8 @@ button { font: inherit; cursor: pointer; }
 .cs-table th, .cs-table td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); font-weight: 500; }
 .cs-table th { color: var(--hw-ink); font-weight: 700; font-size: 0.8125rem; border-bottom: 2px solid var(--hw-ink); }
 .cs-table td.num { font-variant-numeric: tabular-nums; font-family: var(--mono); }
-.cs-table .yes { color: #1d6b43; font-weight: 700; }
-.cs-table .no { color: #555b61; }
+.cs-table .yes { color: #7ed6a4; font-weight: 700; }
+.cs-table .no { color: var(--hw-muted); }
 .cs-table .num { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--hw-ink); font-weight: 600; }
 
 /* Inline figures in case-study sections; a data credit sits under the caption when the source licence asks for one */
@@ -859,7 +860,7 @@ p + .cs-gallery, ul + .cs-gallery { margin: 20px 0 32px; }
 /* A short clip; phone video is portrait, so it stays narrow */
 .cs-fig video { display: block; width: 100%; max-width: 360px; height: auto; border: 1px solid var(--rule); background: #000; }
 /* Real console output printed as text */
-.cs-console { margin: 0; padding: 16px 18px; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.6; background: #fff; color: var(--hw-ink); border: 1px solid var(--rule); white-space: pre; }
+.cs-console { margin: 0; padding: 16px 18px; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.6; background: var(--hw-bg-2); color: var(--hw-ink); border: 1px solid var(--rule); white-space: pre; }
 
 .cs-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .cs-gallery figure { margin: 0; }
@@ -904,9 +905,9 @@ p + .cs-gallery, ul + .cs-gallery { margin: 20px 0 32px; }
 
 /* Equations in a case study (GTAP "The math"). Native MathML, so no library; Cambria Math and STIX Two Math carry the math glyphs. */
 .cs-math { display: grid; gap: 16px; margin-top: 8px; max-width: 46em; }
-.cs-eq { padding: 18px 20px 14px; border: 1px solid var(--rule); background: #fbfaf7; }
+.cs-eq { padding: 18px 20px 14px; border: 1px solid var(--rule); background: var(--hw-bg-2); }
 .cs-eq h3 { margin: 0 0 12px; font-size: 1.0625rem; font-weight: 700; line-height: 1.3; color: var(--hw-ink); }
-.cs-eq-math { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 36px; padding: 14px 16px; background: var(--hw-bg-2); color: var(--hw-ink); font-size: 1.25rem; overflow-x: auto; }
+.cs-eq-math { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 36px; padding: 14px 16px; background: var(--hw-bg); color: var(--hw-ink); font-size: 1.25rem; overflow-x: auto; }
 .cs-eq-math math { font-family: 'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'Times New Roman', serif; }
 .cs-eq .cs-eq-where { margin: 10px 0 12px; font-size: var(--step--1); line-height: 1.5; }
 .cs-eq p { margin-bottom: 8px; }
