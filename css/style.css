@@ -149,9 +149,9 @@ button { font: inherit; cursor: pointer; }
 @property --d { syntax: '<length>'; inherits: true; initial-value: 300px; }
 
 /* ==========================================================================
-   Hero: a Venn diagram. Mechanical Engineering and Computer Science overlap
-   at the +, which is the point of the site. Each circle holds the skills for
-   its major and the button to its projects.
+   Hero: a Venn diagram. Hardware and Software overlap at the +, which is the
+   point of the site. Each circle holds those skills and the button to its
+   projects. The degree line (major and minor) sits under the Venn.
    ========================================================================== */
 .hero {
   position: relative; isolation: isolate; container-type: inline-size;
@@ -179,12 +179,12 @@ button { font: inherit; cursor: pointer; }
 .venn .blk.me { left: calc(var(--d) * 0.16); }
 .venn .blk.cs { right: calc(var(--d) * 0.16); text-align: right; }   /* mirror image of the mechanical side */
 .venn .blk h2 {
-  margin: 0 0 14px; height: 2.3em; font-size: clamp(1.0625rem, calc(var(--d) * 0.042), 1.625rem); line-height: 1.15;
+  margin: 0 0 14px; height: 1.15em; font-size: clamp(1.0625rem, calc(var(--d) * 0.042), 1.625rem); line-height: 1.15;
   font-weight: 800; font-stretch: 110%;
 }
 .venn .blk.me h2 { color: var(--me-ink); }
 .venn .blk.cs h2 { color: var(--cs-ink); }
-.venn .blk ul { font-size: var(--fs); line-height: calc(var(--fs) * 1.75); color: var(--hw-ink); }
+.venn .blk ul { font-size: var(--fs); line-height: calc(var(--fs) * 1.68); color: var(--hw-ink); }
 .venn .blk.cs ul { font-family: var(--mono); font-size: calc(var(--fs) * 0.94); }
 .venn .plus {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%);
@@ -201,8 +201,17 @@ button { font: inherit; cursor: pointer; }
 .venn .blk.cs .btn { background: var(--cs-ink); border-color: var(--cs-ink); flex-direction: row-reverse; }
 .venn .btn:hover { filter: brightness(1.15); }
 @container (max-width: 215px) { .venn .btn .long { display: none; } }
+.hero .degree {
+  margin: 0; font-family: var(--font); color: var(--hw-muted); text-align: center;
+  font-size: clamp(1rem, min(1.35cqi, 2.2svh), 1.25rem); line-height: 1.35;
+}
+.hero .degree .dot { padding: 0 .6em; }
+/* short laptop screens: slightly smaller circles leave room for the degree line */
+@media (min-width: 761px) and (max-height: 800px) {
+  .venn { --d: clamp(300px, min(calc(100cqi / 1.62 * 0.92), 53svh), 600px); }
+}
 
-/* Phones: the circles stack, mechanical on top, and the skills go two-up */
+/* Phones: the circles stack, hardware on top, the skills go two-up, and the degree line takes three lines */
 @media (max-width: 760px) {
   .hero { min-height: 0; padding-top: calc(var(--nav-h) + 36px); }
   .hero h1 { font-size: calc((100cqi - 2 * var(--gutter)) / 5); }
@@ -218,6 +227,9 @@ button { font: inherit; cursor: pointer; }
   .venn .blk h2 br { display: none; }
   .venn .blk ul { columns: 2; column-gap: 16px; --fs: 0.875rem; }
   .venn .plus { font-size: 44px; }
+  .hero .degree { font-size: 1.0625rem; }
+  .hero .degree span { display: block; }
+  .hero .degree .dot { display: none; }
 }
 
 /* ==========================================================================
